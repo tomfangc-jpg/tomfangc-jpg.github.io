@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Smiley Sans";
+  src: url("./assets/SmileySans-Oblique.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --bg: #050505;
   --surface: #121214;
@@ -22,6 +30,13 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 .nav-contact { background: var(--text); padding: 9px 17px; }
 
 .hero { position: relative; min-height: min(790px, calc(100svh - 72px)); display: flex; flex-direction: column; justify-content: center; padding: 55px 0 28px; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, #050505 2%, rgba(5,5,5,.97) 26%, rgba(5,5,5,.72) 55%, rgba(5,5,5,.22) 100%); }
+.hero-video-scene { position: absolute; inset: 0 0 0 42%; overflow: hidden; background: #15171a; }
+.hero-video-scene::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,5,5,.68), transparent 45%), rgba(6,8,11,.21); pointer-events: none; }
+.hero-video { position: absolute; inset: -4%; width: 108%; height: 108%; object-fit: cover; object-position: center 58%; filter: blur(5px) saturate(.68) brightness(.66); transform: scale(1.07); }
+.hero-video-label { position: absolute; z-index: 2; right: max(46px, calc((100vw - 1360px)/2)); bottom: 43px; display: inline-flex; align-items: center; gap: 9px; padding: 9px 13px; border: 1px solid rgba(255,255,255,.26); border-radius: 999px; background: rgba(5,5,5,.4); backdrop-filter: blur(12px); color: #e9e9e9; font-size: 11px; letter-spacing: .05em; }
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px var(--green); animation: live-pulse 2s ease-in-out infinite; }
+@keyframes live-pulse { 50% { opacity: .38; } }
 .hero-background { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero-grid { position: relative; z-index: 1; display: block; width: var(--page); }
 .hero-content { position: relative; z-index: 2; max-width: min(58%, 710px); padding: 26px 0 30px; }
@@ -29,6 +44,17 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 .hero h1 { margin: 35px 0 28px; font-family: "Arial Black", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: clamp(76px, 9.4vw, 146px); font-weight: 900; line-height: 1.02; letter-spacing: -.085em; white-space: nowrap; }
 .hero h1 > span { display: block; color: var(--green); }
 .hero h1 .pink-word { color: var(--pink); }
+.hero h1 { position: relative; margin: 29px 0 25px; font-family: "Smiley Sans", "PingFang SC", sans-serif; font-weight: 400; font-size: clamp(67px, 7.4vw, 116px); line-height: 1.13; letter-spacing: -.045em; white-space: normal; text-shadow: 0 6px 30px rgba(0,0,0,.28); }
+.hero h1 > span { color: var(--text); }
+.hero-title-first { display: block; }
+.hero h1 .hero-name { display: inline; color: var(--green); }
+.hero-title-second { display: block; margin-left: .3em; color: var(--text); }
+.hero h1 .hero-title-star { display: inline-block; margin-left: .07em; color: var(--pink); font-family: Arial, sans-serif; font-size: .46em; vertical-align: top; transform: rotate(-18deg); animation: star-wiggle 6s ease-in-out infinite; }
+.hero-mobile-break { display: none; }
+@keyframes star-wiggle { 50% { transform: rotate(18deg); } }
+.hero-content { max-width: min(78%, 970px); }
+.hero-copy { max-width: 660px; }
+.hero-note { color: #d3d3d5; }
 .hero-copy { max-width: 680px; color: #eeeef0; font-size: clamp(21px, 2.1vw, 31px); line-height: 1.5; letter-spacing: -.04em; }
 .hero-note { max-width: 620px; margin-top: 23px; font-size: 15px; color: #a9a9ad; }
 .hero-actions { margin-top: 39px; gap: 13px; }
@@ -78,6 +104,16 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 .case-card h3 { margin: 26px 0 13px; font-size: clamp(28px, 2.8vw, 42px); line-height: 1.24; }
 .case-summary { color: #aaaab0; font-size: 14px; line-height: 1.75; }
 .case-image { display: block; width: 100%; height: 277px; margin: 23px 0 2px; border-radius: 17px; object-fit: cover; background: #080808; transition: transform .5s cubic-bezier(.2,.75,.2,1), filter .4s; }
+.case-image-proof { object-fit: contain; padding: 13px; background: #eaf0fa; }
+.geo-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: end; height: 277px; margin: 23px 0 2px; padding: 23px; border: 1px solid #45563c; border-radius: 17px; background: radial-gradient(circle at 83% 12%, rgba(160,255,82,.15), transparent 37%), #151b13; }
+.geo-proof-kicker { grid-column: 1 / -1; align-self: start; color: var(--green); font-size: 12px; letter-spacing: .1em; }
+.geo-proof div { display: flex; flex-direction: column; min-height: 95px; justify-content: end; gap: 6px; padding-top: 12px; border-top: 1px solid #5b7250; }
+.geo-proof strong { color: #f1ffe7; font: 400 58px/.92 "Smiley Sans", sans-serif; }
+.geo-proof div span { color: #b2c6aa; font-size: 11px; line-height: 1.35; }
+.service-process { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: center; min-height: 260px; margin-top: 22px; padding: 25px; border: 1px solid #45464a; border-radius: 17px; background: repeating-linear-gradient(135deg, #161b20, #161b20 15px, #191d20 15px, #191d20 16px); }
+.service-process span { padding: 13px 16px; border: 1px solid #4a5155; border-radius: 9px; color: #f0f5f4; font-weight: 700; font-size: 15px; }
+.service-process span:first-child { grid-column: 1 / -1; color: #111; background: var(--cyan); border-color: var(--cyan); }
+.service-process span:last-child { grid-column: 1 / -1; color: var(--cyan); }
 .image-caption { display: block; margin-top: 5px; color: #7f7f85; font-size: 11px; }
 .case-card:hover .case-image { transform: scale(1.015); filter: saturate(1.15); }
 .case-result { min-height: 83px; margin-top: 21px; padding-top: 18px; }
@@ -85,6 +121,7 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 .case-result span { font-size: 12px; color: #d1d1d5; }
 .wide-card { min-height: 500px; display: grid; grid-template-columns: .95fr 1.05fr; column-gap: 40px; align-items: center; }
 .wide-card .case-image { grid-column: 2; grid-row: 1 / 3; height: 100%; max-height: 410px; margin: 0; }
+.wide-card .service-process { grid-column: 2; grid-row: 1 / 3; height: 100%; margin: 0; }
 .wide-card .image-caption { grid-column: 2; grid-row: 3; text-align: right; }
 .wide-card .case-result { grid-column: 1; grid-row: 2; align-self: end; }
 .wide-card h3 { max-width: 560px; }
@@ -119,6 +156,13 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 .social-platform { color: var(--pink); }
 .social-card h3 { font-size: clamp(43px, 5vw, 67px); }
 .social-image { display: block; width: 100%; height: 240px; margin: 23px 0 0; border-radius: 17px; object-fit: cover; }
+.social-image-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 23px; }
+.social-image-grid .social-image { height: 250px; margin: 0; object-position: center 25%; }
+.xhs-feature { display: flex; flex-direction: column; justify-content: space-between; min-height: 251px; margin-top: 23px; padding: 22px; border: 1px solid #a76d85; border-radius: 17px; background: radial-gradient(circle at 84% 20%, rgba(255,175,207,.18), transparent 34%), #24171f; transition: transform .25s, border-color .25s; }
+.xhs-feature:hover { transform: translateY(-3px); border-color: var(--pink); }
+.xhs-feature span { color: var(--pink); font-size: 11px; letter-spacing: .12em; }
+.xhs-feature strong { font-family: "Smiley Sans", "PingFang SC", sans-serif; font-size: clamp(29px, 3.5vw, 46px); font-weight: 400; line-height: 1.24; }
+.xhs-feature em { color: #eee3e9; font-size: 12px; font-style: normal; }
 .social-stats { gap: 27px; margin-top: 24px; }
 .social-stat strong { font-family: "Arial Black", "PingFang SC", sans-serif; font-size: 39px; font-weight: 900; }
 .social-links { margin-top: 17px; }
@@ -143,7 +187,7 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 @media (max-width: 980px) {
   :root { --page: calc(100% - 50px); }
   .topbar { padding-inline: 25px; }
-  .hero-content { max-width: 60%; }
+  .hero-content { max-width: 78%; }
   .hero h1 { font-size: clamp(62px, 9vw, 90px); }
   .hero-portrait-wrap { height: 490px; }
   .result-snapshot { grid-template-columns: 1fr; gap: 35px; padding: 94px 0; }
@@ -157,13 +201,19 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .nav { gap: 16px; }
   .nav a:nth-child(4) { display: none; }
   .hero { min-height: auto; padding: 55px 0 35px; }
+  .hero::before { display: none; }
+  .hero-video-scene { position: relative; inset: auto; order: 2; width: var(--page); height: 370px; margin: 35px auto 0; border: 1px solid #3a3a3e; border-radius: 21px; }
+  .hero-video { filter: blur(3px) saturate(.73) brightness(.75); }
+  .hero-video-label { right: 15px; bottom: 15px; }
   .hero-background { display: none; }
   .hero-grid { display: grid; grid-template-columns: 1fr; gap: 45px; }
   .hero-content { max-width: none; padding: 0; }
-  .hero h1 { margin: 25px 0; font-size: clamp(65px, 13vw, 100px); }
+  .hero h1 { margin: 25px 0; font-size: clamp(56px, 10vw, 91px); }
+  .hero-title-second { margin-left: .12em; }
+  .hero-mobile-break { display: initial; }
   .hero-copy { font-size: 22px; }
-  .hero-portrait-wrap { display: block; width: min(85%, 440px); height: 460px; margin: 0 auto; }
-  .hero-bottom { padding-top: 48px; }
+  .hero-portrait-wrap { display: none; }
+  .hero-bottom { order: 3; padding-top: 22px; }
   .section { padding: 90px 0; }
   .section-heading { align-items: start; flex-direction: column; }
   .section-heading h2 { font-size: clamp(54px, 12vw, 90px); }
@@ -171,8 +221,10 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .case-grid { grid-template-columns: 1fr; }
   .case-card { min-height: 0; }
   .case-image { height: 280px; }
+  .geo-proof { height: 280px; }
   .wide-card { display: flex; min-height: 0; }
   .wide-card .case-image { width: 100%; max-height: none; height: 280px; margin: 23px 0 0; }
+  .wide-card .service-process { width: 100%; height: auto; min-height: 245px; margin: 23px 0 0; }
   .wide-card .case-result { width: 100%; }
   .proof-band { padding: 87px 0; }
   .proof-title { font-size: clamp(46px, 9vw, 75px); }
@@ -192,10 +244,10 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .nav { gap: 12px; font-size: 11px; }
   .nav a:nth-child(3) { display: none; }
   .nav-contact { padding: 8px 13px; }
-  .hero h1 { font-size: clamp(61px, 15vw, 82px); white-space: normal; }
+  .hero h1 { font-size: clamp(51px, 12vw, 72px); white-space: normal; }
   .hero-copy { font-size: 19px; }
   .hero-note { font-size: 13px; }
-  .hero-portrait-wrap { width: 88%; height: 390px; }
+  .hero-video-scene { height: 310px; }
   .result-snapshot { padding: 80px 0; }
   .result-intro h2 { font-size: 49px; }
   .result-item { grid-template-columns: 1fr; gap: 7px; }
@@ -205,6 +257,9 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .case-card { padding: 22px; }
   .case-card h3 { font-size: 29px; }
   .case-image, .wide-card .case-image { height: 215px; }
+  .geo-proof { height: 215px; padding: 17px; gap: 7px; }
+  .geo-proof strong { font-size: 43px; }
+  .geo-proof div span { font-size: 10px; }
   .case-result { flex-direction: row; align-items: end; }
   .case-result strong { font-size: 40px; }
   .case-result span { max-width: 150px; text-align: right; }
@@ -213,10 +268,12 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .detail-stat { min-height: 0; }
   .social-card { padding: 23px; }
   .social-image { height: 205px; }
+  .social-image-grid .social-image { height: 225px; }
   .social-stat strong { font-size: 32px; }
   .timeline-item { grid-template-columns: 94px 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
+  .live-dot, .hero-title-star { animation: none; }
   .js-ready .reveal { opacity: 1; transform: none; }
 }

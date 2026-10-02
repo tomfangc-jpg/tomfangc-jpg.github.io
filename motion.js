@@ -1,5 +1,20 @@
 document.documentElement.classList.add('js-ready');
 
+const heroVideo = document.querySelector('.hero-video');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (heroVideo) {
+  const syncVideo = (visible = true) => {
+    if (reducedMotion.matches || document.hidden || !visible) heroVideo.pause();
+    else heroVideo.play().catch(() => {});
+  };
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => syncVideo(entry.isIntersecting), { threshold: 0.05 }).observe(heroVideo);
+  }
+  reducedMotion.addEventListener('change', () => syncVideo());
+  document.addEventListener('visibilitychange', () => syncVideo());
+  syncVideo();
+}
+
 const revealTargets = document.querySelectorAll('.result-snapshot, .section-heading, .case-card, .proof-title, .proof-step, .details, .social-card, .about-grid, .footer-cta');
 revealTargets.forEach((element) => element.classList.add('reveal'));
 
