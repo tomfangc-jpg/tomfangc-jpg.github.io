@@ -21,9 +21,10 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 .nav { gap: 31px; color: #dedee0; font-size: 13px; }
 .nav-contact { background: var(--text); padding: 9px 17px; }
 
-.hero { min-height: min(850px, calc(100svh - 72px)); display: flex; flex-direction: column; justify-content: center; padding: 55px 0 28px; }
-.hero-grid { width: var(--page); grid-template-columns: 1.16fr .84fr; gap: min(6vw, 84px); align-items: center; }
-.hero-content { position: relative; z-index: 2; padding: 26px 0 30px; }
+.hero { position: relative; min-height: min(790px, calc(100svh - 72px)); display: flex; flex-direction: column; justify-content: center; padding: 55px 0 28px; overflow: hidden; }
+.hero-background { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-grid { position: relative; z-index: 1; display: block; width: var(--page); }
+.hero-content { position: relative; z-index: 2; max-width: min(58%, 710px); padding: 26px 0 30px; }
 .eyebrow, .section-kicker { font-size: 13px; color: var(--green); letter-spacing: .07em; font-weight: 750; }
 .hero h1 { margin: 35px 0 28px; font-family: "Arial Black", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: clamp(76px, 9.4vw, 146px); font-weight: 900; line-height: 1.02; letter-spacing: -.085em; white-space: nowrap; }
 .hero h1 > span { display: block; color: var(--green); }
@@ -34,12 +35,13 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 .button { min-height: 51px; border-radius: 50px; padding: 0 24px; font-size: 14px; border-color: #5a595e; }
 .button-primary { color: #111; }
 .button span { margin-left: 9px; }
-.hero-portrait-wrap { position: relative; width: min(100%, 515px); height: clamp(490px, 51vw, 650px); margin-left: auto; border-radius: 28px; transform: rotate(2.5deg); background: #095c9b; box-shadow: 25px 25px 0 #111114; overflow: hidden; }
+.hero-portrait-wrap { display: none; position: relative; width: min(100%, 515px); height: clamp(490px, 51vw, 650px); margin-left: auto; border-radius: 28px; transform: rotate(2.5deg); background: #095c9b; box-shadow: 25px 25px 0 #111114; overflow: hidden; }
 .hero-portrait { width: 100%; height: 100%; object-fit: cover; object-position: center 31%; filter: saturate(.82) contrast(1.06); }
 .portrait-caption { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: end; gap: 14px; padding: 18px 22px; background: rgba(4,4,5,.84); }
 .portrait-caption b { font-size: 22px; line-height: 1; }
 .portrait-caption span { color: #d8d8db; font-size: 12px; }
-.hero-bottom { display: flex; justify-content: space-between; padding-top: 35px; color: #99999d; font-size: 12px; letter-spacing: .04em; }
+.hero-bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; padding-top: 35px; color: #99999d; font-size: 12px; letter-spacing: .04em; }
+.hero-photo-note { margin-left: auto; margin-right: 24px; }
 .hero-bottom span:last-child { color: var(--green); font-size: 24px; line-height: .6; }
 .ticker { background: #0c0c0e; border-color: #28282c; }
 .ticker-track { gap: 70px; padding: 19px 0; color: #e8e8e9; font-size: 13px; letter-spacing: .07em; animation: ticker-move 28s linear infinite; }
@@ -141,7 +143,7 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
 @media (max-width: 980px) {
   :root { --page: calc(100% - 50px); }
   .topbar { padding-inline: 25px; }
-  .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 25px; }
+  .hero-content { max-width: 60%; }
   .hero h1 { font-size: clamp(62px, 9vw, 90px); }
   .hero-portrait-wrap { height: 490px; }
   .result-snapshot { grid-template-columns: 1fr; gap: 35px; padding: 94px 0; }
@@ -155,11 +157,12 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .nav { gap: 16px; }
   .nav a:nth-child(4) { display: none; }
   .hero { min-height: auto; padding: 55px 0 35px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 45px; }
-  .hero-content { padding: 0; }
+  .hero-background { display: none; }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 45px; }
+  .hero-content { max-width: none; padding: 0; }
   .hero h1 { margin: 25px 0; font-size: clamp(65px, 13vw, 100px); }
   .hero-copy { font-size: 22px; }
-  .hero-portrait-wrap { width: min(85%, 440px); height: 460px; margin: 0 auto; }
+  .hero-portrait-wrap { display: block; width: min(85%, 440px); height: 460px; margin: 0 auto; }
   .hero-bottom { padding-top: 48px; }
   .section { padding: 90px 0; }
   .section-heading { align-items: start; flex-direction: column; }
