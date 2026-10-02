@@ -32,7 +32,7 @@ if ('IntersectionObserver' in window) {
 }
 
 const filterButtons = document.querySelectorAll('.filter-button');
-const caseCards = document.querySelectorAll('.case-card[data-category]');
+const caseCards = document.querySelectorAll('.case-row[data-category]');
 
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
