@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="description" content="方成的个人作品集与简历：GEO获客运营、小红书点点AI搜索优化、企业内容代运营与个人创作账号。" />
+    <title>方成 — GEO 获客运营</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%239bff4f'/%3E%3Cpath d='M14 47V17h13c12 0 19 5 19 15S39 47 27 47H14zm10-8h4c6 0 9-2 9-7s-3-7-9-7h-4v14z' fill='%23050505'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050505;
+        --surface: #111113;
+        --surface-raised: #17171a;
+        --text: #f4f3ef;
+        --muted: #a3a2a5;
+        --line: #2b2a2d;
+        --green: #9bff4f;
+        --pink: #ff9aca;
+        --cyan: #66dff5;
+        --purple: #b49aff;
+        --page: min(1240px, calc(100% - 72px));
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; background: var(--bg); }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+      ::selection { background: var(--green); color: #080808; }
+      .wrap { width: var(--page); margin-inline: auto; }
+      .topbar {
+        position: sticky; top: 0; z-index: 20; height: 68px;
+        display: flex; align-items: center; justify-content: space-between;
+        padding-inline: max(36px, calc((100vw - 1240px) / 2));
+        background: rgba(5, 5, 5, .82); border-bottom: 1px solid rgba(255,255,255,.08);
+        backdrop-filter: blur(18px);
+      }
+      .brand { display: inline-flex; gap: 10px; align-items: center; font-weight: 800; letter-spacing: -.04em; }
+      .brand-mark { width: 25px; height: 25px; border-radius: 7px; display: grid; place-items: center; background: var(--green); color: #070707; font: 900 12px/1 Arial, sans-serif; }
+      .brand-name { font-size: 14px; }
+      .nav { display: flex; gap: clamp(18px, 3.2vw, 42px); align-items: center; color: #b9b8bc; font-size: 13px; }
+      .nav a { transition: color .2s ease; }
+      .nav a:hover { color: var(--green); }
+      .nav-contact { padding: 8px 16px; border-radius: 99px; color: #080808 !important; background: var(--text); font-weight: 700; }
+      .nav-contact:hover { background: var(--green); }
+      .hero { min-height: 650px; display: grid; align-items: center; padding: 72px 0 86px; overflow: hidden; }
+      .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; align-items: end; gap: 5vw; }
+      .eyebrow, .section-kicker { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+      .hero h1 { margin: 28px 0 23px; font-family: Impact, "Arial Narrow", sans-serif; font-size: clamp(88px, 15vw, 190px); line-height: .76; font-weight: 500; letter-spacing: -.045em; }
+      .hero h1 span { display: block; color: var(--green); }
+      .hero-copy { max-width: 640px; margin: 0; color: #cfced1; font-size: clamp(19px, 2.1vw, 27px); line-height: 1.55; letter-spacing: -.035em; }
+      .hero-copy strong { color: var(--text); font-weight: 700; }
+      .hero-note { max-width: 600px; margin: 17px 0 0; color: var(--muted); font-size: 15px; }
+      .hero-side { border-top: 1px solid var(--line); padding-top: 20px; }
+      .hero-side-label { color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+      .hero-metric { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 12px; margin-top: 17px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+      .hero-metric strong { font: 500 clamp(46px, 6vw, 78px)/.9 Impact, "Arial Narrow", sans-serif; letter-spacing: -.02em; }
+      .hero-metric span { max-width: 155px; color: var(--muted); font-size: 13px; text-align: right; }
+      .hero-metric .pink { color: var(--pink); }
+      .hero-metric .cyan { color: var(--cyan); }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+      .button { display: inline-flex; min-height: 47px; align-items: center; justify-content: center; padding: 0 21px; border: 1px solid var(--line); border-radius: 99px; color: var(--text); font-size: 14px; font-weight: 700; transition: transform .2s, border-color .2s, background .2s; }
+      .button:hover { transform: translateY(-2px); border-color: var(--green); }
+      .button-primary { background: var(--green); border-color: var(--green); color: #080808; }
+      .button-primary:hover { background: #b5ff83; }
+      .ticker { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .ticker-track { display: flex; width: max-content; gap: 44px; padding: 14px 0; color: #848387; font: 500 12px/1 Arial, sans-serif; letter-spacing: .18em; white-space: nowrap; }
+      .ticker-track span:nth-child(3n+1) { color: var(--green); }
+      section { scroll-margin-top: 76px; }
+      .section { padding: 106px 0; }
+      .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 39px; }
+      .section-heading h2 { margin: 9px 0 0; font: 500 clamp(42px, 7vw, 88px)/.92 Impact, "Arial Narrow", sans-serif; letter-spacing: -.025em; text-transform: uppercase; }
+      .section-heading p { max-width: 350px; margin: 0 0 4px; color: var(--muted); font-size: 14px; }
+      .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+      .case-card { position: relative; min-height: 370px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: clamp(24px, 3.4vw, 43px); border: 1px solid #202023; border-radius: 24px; background: var(--surface); transition: border-color .25s, transform .25s; }
+      .case-card:hover { transform: translateY(-4px); border-color: #4b4b4e; }
+      .case-card::after { content: ""; position: absolute; top: 29px; right: 30px; width: 11px; height: 11px; border-radius: 50%; background: var(--card-accent, var(--green)); box-shadow: 0 0 25px color-mix(in srgb, var(--card-accent, var(--green)) 50%, transparent); }
+      .case-meta { display: flex; align-items: center; gap: 9px; color: var(--card-accent, var(--green)); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+      .case-index { color: #77767a; font: 13px/1 Arial, sans-serif; }
+      .case-card h3 { max-width: 580px; margin: 28px 0 14px; font-size: clamp(27px, 3vw, 39px); line-height: 1.22; letter-spacing: -.055em; }
+      .case-summary { max-width: 620px; margin: 0; color: #aaa9ad; font-size: 15px; }
+      .case-result { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-top: 35px; padding-top: 19px; border-top: 1px solid #303034; }
+      .case-result strong { color: var(--card-accent, var(--green)); font: 500 clamp(36px, 5vw, 61px)/.9 Impact, "Arial Narrow", sans-serif; white-space: nowrap; }
+      .case-result span { max-width: 195px; color: #b1b0b4; font-size: 12px; text-align: right; }
+      .wide-card { grid-column: 1 / -1; min-height: 337px; }
+      .wide-card .case-result { max-width: 760px; }
+      .proof-band { padding: 81px 0 88px; background: #0d0d0f; }
+      .proof-title { max-width: 980px; margin: 15px 0 44px; font-size: clamp(36px, 6.8vw, 82px); line-height: 1.05; letter-spacing: -.065em; }
+      .proof-title span { color: var(--pink); }
+      .proof-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid #333236; border-bottom: 1px solid #333236; }
+      .proof-step { min-height: 147px; padding: 20px 18px 22px 0; border-right: 1px solid #333236; }
+      .proof-step + .proof-step { padding-left: 19px; }
+      .proof-step:last-child { border-right: 0; }
+      .proof-step b { display: block; margin-bottom: 17px; color: var(--green); font: 14px/1 Arial, sans-serif; }
+      .proof-step strong { display: block; font-size: 17px; }
+      .proof-step small { display: block; max-width: 175px; margin-top: 8px; color: #969599; font-size: 12px; line-height: 1.55; }
+      .details { display: grid; grid-template-columns: .8fr 1.2fr; gap: 6vw; padding: 105px 0; border-bottom: 1px solid var(--line); }
+      .details-aside { position: sticky; top: 100px; align-self: start; }
+      .details-aside h2 { max-width: 410px; margin: 14px 0 20px; font: 500 clamp(40px, 5.7vw, 70px)/.95 Impact, "Arial Narrow", sans-serif; letter-spacing: -.02em; text-transform: uppercase; }
+      .details-aside p { max-width: 390px; color: var(--muted); font-size: 14px; }
+      .case-detail { padding: 0 0 38px; border-bottom: 1px solid var(--line); }
+      .case-detail + .case-detail { padding-top: 35px; }
+      .case-detail:last-child { padding-bottom: 0; border: 0; }
+      .detail-head { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+      .detail-head h3 { margin: 0; font-size: 26px; letter-spacing: -.05em; }
+      .detail-tag { flex: 0 0 auto; color: var(--green); font: 12px/1.5 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+      .detail-copy { max-width: 650px; margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+      .detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 23px; }
+      .detail-stat { padding: 18px; border-radius: 14px; background: #111113; }
+      .detail-stat strong { display: block; color: var(--cyan); font: 500 30px/1 Impact, "Arial Narrow", sans-serif; }
+      .detail-stat span { display: block; margin-top: 8px; color: #aaa9ad; font-size: 12px; }
+      .detail-note { margin-top: 17px; color: #8f8e92; font-size: 12px; }
+      .social-section { padding: 105px 0 111px; }
+      .social-grid { display: grid; grid-template-columns: 1.03fr .97fr; gap: 18px; }
+      .social-card { min-height: 370px; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(25px, 4vw, 48px); border-radius: 23px; background: var(--surface); border: 1px solid #222225; }
+      .social-card.xhs { background: #101011; }
+      .social-platform { color: var(--pink); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+      .social-card h3 { margin: 20px 0 8px; font-size: clamp(35px, 5vw, 58px); line-height: 1; letter-spacing: -.07em; }
+      .social-handle { color: #a8a7ab; font-size: 14px; }
+      .social-stats { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 35px; }
+      .social-stat strong { display: block; font: 500 40px/.95 Impact, "Arial Narrow", sans-serif; color: var(--green); }
+      .social-stat span { color: #a8a7ab; font-size: 11px; }
+      .social-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+      .social-link { display: inline-flex; padding: 9px 12px; border: 1px solid #39383c; border-radius: 99px; color: #d8d7da; font-size: 12px; transition: color .2s, border-color .2s; }
+      .social-link:hover { color: var(--green); border-color: var(--green); }
+      .social-card .button { align-self: start; margin-top: 24px; }
+      .social-disclaimer { margin: 17px 0 0; color: #77767b; font-size: 11px; }
+      .about { padding: 91px 0 104px; border-top: 1px solid var(--line); background: #0b0b0d; }
+      .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 7vw; }
+      .about h2 { margin: 14px 0 20px; font: 500 clamp(44px, 6vw, 77px)/.93 Impact, "Arial Narrow", sans-serif; text-transform: uppercase; }
+      .about-lede { max-width: 410px; color: #c2c1c5; font-size: 17px; line-height: 1.7; }
+      .timeline { border-top: 1px solid #333236; }
+      .timeline-item { display: grid; grid-template-columns: 125px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid #333236; }
+      .timeline-date { color: var(--green); font: 12px/1.5 Arial, sans-serif; letter-spacing: .06em; }
+      .timeline-item h3 { margin: 0; font-size: 17px; }
+      .timeline-item p { margin: 5px 0 0; color: #9e9da1; font-size: 13px; }
+      .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+      .skill { padding: 7px 11px; border: 1px solid #353438; border-radius: 99px; color: #b6b5b8; font-size: 11px; }
+      .footer { padding: 63px 0 26px; }
+      .footer-cta { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding-bottom: 47px; border-bottom: 1px solid var(--line); }
+      .footer-cta h2 { max-width: 720px; margin: 13px 0 0; font-size: clamp(35px, 6vw, 73px); line-height: 1; letter-spacing: -.07em; }
+      .footer-links { display: flex; gap: 10px; flex-wrap: wrap; }
+      .footer-bottom { display: flex; justify-content: space-between; gap: 15px; padding-top: 20px; color: #77767b; font-size: 11px; }
+      @media (max-width: 800px) {
+        :root { --page: calc(100% - 40px); }
+        .topbar { height: 60px; padding-inline: 20px; }
+        .nav { gap: 16px; font-size: 12px; }
+        .nav a:nth-child(3) { display: none; }
+        .nav-contact { padding: 7px 11px; }
+        .hero { min-height: auto; padding: 74px 0 69px; }
+        .hero-grid { grid-template-columns: 1fr; gap: 55px; }
+        .hero h1 { margin-top: 25px; font-size: clamp(85px, 21vw, 150px); }
+        .hero-side { max-width: 540px; }
+        .section { padding: 77px 0; }
+        .section-heading { align-items: start; flex-direction: column; }
+        .case-grid { grid-template-columns: 1fr; }
+        .wide-card { grid-column: auto; }
+        .case-card { min-height: 330px; }
+        .proof-band { padding: 65px 0; }
+        .proof-steps { grid-template-columns: 1fr; }
+        .proof-step, .proof-step + .proof-step { min-height: auto; padding: 16px 0; border-right: 0; border-bottom: 1px solid #333236; }
+        .proof-step:last-child { border-bottom: 0; }
+        .proof-step b { display: inline-block; width: 42px; margin: 0; }
+        .proof-step strong { display: inline; }
+        .proof-step small { max-width: none; margin-left: 45px; }
+        .details { grid-template-columns: 1fr; gap: 38px; padding: 76px 0; }
+        .details-aside { position: static; }
+        .social-section { padding: 77px 0; }
+        .social-grid { grid-template-columns: 1fr; }
+        .social-card { min-height: 340px; }
+        .about { padding: 75px 0; }
+        .about-grid { grid-template-columns: 1fr; gap: 38px; }
+        .footer-cta { align-items: start; flex-direction: column; }
+      }
+      @media (max-width: 470px) {
+        :root { --page: calc(100% - 32px); }
+        .topbar { padding-inline: 16px; }
+        .brand-name { display: none; }
+        .nav { gap: 13px; }
+        .hero h1 { font-size: 22vw; }
+        .hero-metric strong { font-size: 49px; }
+        .case-card { min-height: 325px; padding: 24px; border-radius: 19px; }
+        .case-result { align-items: start; flex-direction: column; }
+        .case-result span { max-width: 260px; text-align: left; }
+        .detail-grid { grid-template-columns: 1fr; }
+        .detail-stat { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .detail-stat span { margin: 0; text-align: right; }
+        .timeline-item { grid-template-columns: 95px 1fr; gap: 12px; }
+        .footer-bottom { flex-direction: column; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="方成主页"><span class="brand-mark">FC</span><span class="brand-name">FANG CHENG · PORTFOLIO</span></a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#home">首页</a><a href="#work">项目</a><a href="#creator">个人账号</a><a href="#about">关于</a><a class="nav-contact" href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero wrap" id="home">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">GEO · 小红书内容获客 · 企业代运营</div>
+            <h1>GEO<span>GROWTH</span></h1>
+            <p class="hero-copy"><strong>方成 / GEO 获客运营</strong><br />围绕用户问题做内容，让品牌进入小红书搜索与点点 AI 回答，并持续带来有效咨询。</p>
+            <p class="hero-note">擅长 GEO 业务获客运营、小红书点点 AI 搜索优化，以及面向企业客户的内容代运营项目。</p>
+            <div class="hero-actions"><a class="button button-primary" href="#work">看项目结果</a><a class="button" href="#creator">看个人账号</a></div>
+          </div>
+          <div class="hero-side" aria-label="代表业绩">
+            <div class="hero-side-label">运营结果 / Selected metrics</div>
+            <div class="hero-metric"><strong class="pink">≈20</strong><span>月均新增微信<br />按简历统计口径</span></div>
+            <div class="hero-metric"><strong class="cyan">83.8%</strong><span>有效加微率<br />累计转化结果</span></div>
+            <div class="hero-metric"><strong>5×</strong><span>腕表品牌项目<br />连续合作周期</span></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-label="能力关键词"><div class="ticker-track"><span>GEO LEAD OPS</span><span>小红书点点 AI 搜索优化</span><span>CONTENT OPERATION</span><span>企业内容代运营</span><span>KOC CAMPAIGN</span><span>从结果复盘到方法复用</span><span>GEO LEAD OPS</span><span>小红书点点 AI 搜索优化</span><span>CONTENT OPERATION</span><span>企业内容代运营</span></div></div>
+
+      <section class="section wrap" id="work">
+        <div class="section-heading"><div><div class="section-kicker">Selected work / 结果优先</div><h2>Work collection</h2></div><p>每个案例先讲业务问题与结果，再展开执行过程、证据和可复用的方法。</p></div>
+        <div class="case-grid">
+          <a class="case-card" style="--card-accent: var(--green)" href="#geo-case">
+            <div><div class="case-meta"><span class="case-index">01</span> GEO / AI 搜索优化</div><h3>让目标品牌进入点点 AI 的真实回答</h3><p class="case-summary">基于关键词和已有信源规划内容，以固定账号与设备做重复验证，确认品牌出现不是一次性的截图结果。</p></div>
+            <div class="case-result"><strong>10 / 10</strong><span>目标关键词均进入回答<br />最高设备覆盖 10 / 10</span></div>
+          </a>
+          <a class="case-card" style="--card-accent: var(--pink)" href="#lead-case">
+            <div><div class="case-meta"><span class="case-index">02</span> GEO / 获客运营</div><h3>把内容运营连接到每月有效咨询</h3><p class="case-summary">负责公司 GEO 业务的获客运营，围绕潜在客户的问题持续选题、生产内容、发布和复盘。</p></div>
+            <div class="case-result"><strong>≈20 / 月</strong><span>月均新增微信约 20 人<br />累计有效率 83.8%</span></div>
+          </a>
+          <a class="case-card wide-card" style="--card-accent: var(--cyan)" href="#service-case">
+            <div><div class="case-meta"><span class="case-index">03</span> 企业内容代运营 / KOC 种草</div><h3>从客户 brief 到 KOC 发布与结果回收，独立推进项目全流程</h3><p class="case-summary">服务高端腕表、高端全屋定制、香港求职培训等企业客户。独立完成需求拆解、brief、KOC 建联、稿件审核、发布跟踪与数据回收。累计产出 160 篇 KOC / 素人笔记；腕表项目续约 5 个周期，家装项目续约 2 轮。</p></div>
+            <div class="case-result"><strong>160 篇</strong><span>多行业企业代运营内容<br />以复购和续约验证交付质量</span></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="proof-band">
+        <div class="wrap">
+          <div class="section-kicker">Method / 能复用的结果</div>
+          <h2 class="proof-title">把每次执行沉淀成<span>下一次能复用的做法</span></h2>
+          <div class="proof-steps">
+            <div class="proof-step"><b>01</b><strong>定目标</strong><small>先明确目标词、目标客户和验收口径。</small></div>
+            <div class="proof-step"><b>02</b><strong>找机会</strong><small>分析搜索结果、竞品和已有内容信源。</small></div>
+            <div class="proof-step"><b>03</b><strong>做内容</strong><small>把产品事实转成用户看得懂的回答与内容。</small></div>
+            <div class="proof-step"><b>04</b><strong>看结果</strong><small>持续追踪咨询、有效加微和 AI 回答变化。</small></div>
+            <div class="proof-step"><b>05</b><strong>继续优化</strong><small>保留有效做法，调整低效选题、信源与表达。</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap" aria-label="项目详情">
+        <div class="details" id="geo-case">
+          <div class="details-aside"><div class="section-kicker">01 / GEO & AI 搜索</div><h2>品牌进入点点 AI 回答</h2><p>把“发了多少篇”还原成一条可核验的因果链：目标词、内容部署、平台回答、设备复测和复盘资产。</p></div>
+          <div>
+            <article class="case-detail">
+              <div class="detail-head"><h3>小红书点点 AI 搜索优化实验</h3><span class="detail-tag">2026 · 2.5 周</span></div>
+              <p class="detail-copy">针对企业客户希望在行业推荐词与选购问题中被点点 AI 提及的需求，分析目标词、竞品和现有信源，制作并发布匹配主题的内容，再按固定规则复测。</p>
+              <div class="detail-grid"><div class="detail-stat"><strong>10 / 10</strong><span>目标词全部上榜</span></div><div class="detail-stat"><strong>40–100%</strong><span>各词设备上榜率</span></div><div class="detail-stat"><strong>¥39</strong><span>平均内容成本 / 词</span></div></div>
+              <p class="detail-note">投入 26 篇笔记，覆盖 10 个关键词；其中两个词达到 10 台设备全收录。结果来自项目登记与阶段验证，展示时以具体关键词和截图证据为准。</p>
+            </article>
+            <article class="case-detail">
+              <div class="detail-head"><h3>怎样让结果经得起复测</h3><span class="detail-tag">可复用方法</span></div>
+              <p class="detail-copy">先筛选竞争度和用户意图，再拆分相近词簇；以自我介绍、产品事实和场景内容补足可被引用的信源。发布后留出收录时间，使用多个账号和设备重复测试，把截图与信源登记留档。</p>
+              <p class="detail-note">可复用资产：四步执行 SOP、内容登记表、收录验证流程、复测标准与结果截图证据链。</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="details" id="lead-case">
+          <div class="details-aside"><div class="section-kicker">02 / Lead operation</div><h2>从内容找到客户</h2><p>获客内容的评价标准是有没有带来合适的对话，以及对话能不能有效进入下一步。</p></div>
+          <div>
+            <article class="case-detail">
+              <div class="detail-head"><h3>公司 GEO 业务获客运营</h3><span class="detail-tag">持续运营</span></div>
+              <p class="detail-copy">围绕潜在客户会搜索的问题制定选题，运营企业主账号，负责内容撰写与图文 / 短视频制作，发布后根据进线和加微信数据调整内容主题、表达方式和承接路径。</p>
+              <div class="detail-grid"><div class="detail-stat"><strong>≈20</strong><span>月均新增加微</span></div><div class="detail-stat"><strong>83.8%</strong><span>累计加微有效率</span></div><div class="detail-stat"><strong>2 个</strong><span>独立运营企业主账号</span></div></div>
+              <p class="detail-note">可复用经验：先从客户问题出发组织内容，再用有效咨询而非单篇曝光判断内容质量。月均数量为约数；有效率按简历累计数据口径。</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="details" id="service-case">
+          <div class="details-aside"><div class="section-kicker">03 / 企业内容代运营</div><h2>KOC 项目全流程</h2><p>服务其他企业做内容代运营，把项目交付拆成客户能确认、执行中能追踪、结束后能复盘的具体环节。</p></div>
+          <div>
+            <article class="case-detail">
+              <div class="detail-head"><h3>多行业 KOC 与素人内容服务</h3><span class="detail-tag">160 篇累计产出</span></div>
+              <p class="detail-copy">从客户 brief 和传播目标开始，研究行业与产品卖点，匹配并建联创作者，独立推进选题 brief、稿件审核修改、发布时间管理、发布检查和数据回收。服务对象涵盖国际高端腕表、高端全屋定制与香港求职培训等项目。</p>
+              <div class="detail-grid"><div class="detail-stat"><strong>5 期</strong><span>腕表品牌连续续约</span></div><div class="detail-stat"><strong>2 轮</strong><span>高端家装项目续约</span></div><div class="detail-stat"><strong>160 篇</strong><span>多行业累计笔记产出</span></div></div>
+              <p class="detail-note">腕表客户结案文件含保密标记，公开版仅展示匿名化项目摘要。具体品牌名称、客户素材和内部报告不在本页公开。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-section wrap" id="creator">
+        <div class="section-heading"><div><div class="section-kicker">Personal channel / 个人创作</div><h2>Creator account</h2></div><p>个人账号展示持续创作能力。商业客户项目与个人内容分开展示，各自按对应结果评价。</p></div>
+        <div class="social-grid">
+          <article class="social-card">
+            <div><div class="social-platform">Douyin · 个人绘画账号</div><h3>未济</h3><div class="social-handle">手绘创作 · 热点人物与故事表达 · 粉丝头像定制</div>
+              <div class="social-stats"><div class="social-stat"><strong>56</strong><span>公开作品</span></div><div class="social-stat"><strong>1,931</strong><span>粉丝</span></div><div class="social-stat"><strong>1.2 万</strong><span>获赞</span></div></div>
+              <div class="social-links"><a class="social-link" href="https://www.douyin.com/video/7671533516735953762" target="_blank" rel="noreferrer">《晚安树哥》 · 62.4 万播放</a><a class="social-link" href="https://www.douyin.com/video/7656383777392561507" target="_blank" rel="noreferrer">Oliver Tree 头像 · 11.3 万播放</a><a class="social-link" href="https://www.douyin.com/note/7671661548808930275" target="_blank" rel="noreferrer">许家印手绘 · 8.1 万播放</a></div>
+            </div>
+            <a class="button" href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank" rel="noreferrer">打开抖音主页</a>
+          </article>
+          <article class="social-card xhs">
+            <div><div class="social-platform" style="color: var(--pink)">Xiaohongshu · 个人内容账号</div><h3>小红书作品</h3><div class="social-handle">持续积累平台原生内容与账号运营实践</div>
+              <p class="case-summary" style="margin-top:24px">这里作为个人内容作品入口，与企业代运营案例分开展示。账号后台的笔记与粉丝数据尚未核实，当前不展示具体数字。</p>
+              <div class="social-stats"><div class="social-stat"><strong style="color:var(--pink)">作品</strong><span>点击查看个人主页</span></div><div class="social-stat"><strong style="color:var(--purple)">内容</strong><span>持续更新中</span></div></div>
+            </div>
+            <a class="button" href="https://www.xiaohongshu.com/user/profile/666460df0000000003031688" target="_blank" rel="noreferrer">打开小红书主页</a>
+          </article>
+        </div>
+        <p class="social-disclaimer">抖音粉丝、获赞、作品和视频播放数为 2026-10-02 主页显示值，会随账号更新而变化。</p>
+      </section>
+
+      <section class="about" id="about">
+        <div class="wrap about-grid">
+          <div><div class="section-kicker">About / 简历</div><h2>内容运营<br />以结果复盘</h2><p class="about-lede">从艺术教学到社群运营，再到 GEO 获客和企业内容代运营。我关注用户为什么搜索、什么信息能解决问题，以及内容最后有没有带来有效结果。</p><div class="skills"><span class="skill">小红书运营</span><span class="skill">点点 AI 搜索优化</span><span class="skill">企业获客</span><span class="skill">内容代运营</span><span class="skill">KOC 建联与管理</span><span class="skill">数据复盘</span><span class="skill">A/B 测试</span><span class="skill">AI 内容工作流</span><span class="skill">剪映</span><span class="skill">Photoshop</span></div></div>
+          <div class="timeline">
+            <div class="timeline-item"><div class="timeline-date">2025.12 — 至今</div><div><h3>库品（上海）网络科技有限公司 · 运营</h3><p>负责 GEO 业务获客运营、小红书点点 AI 搜索优化及多行业企业内容代运营。</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">2024.02 — 2025.11</div><div><h3>英语流利说 · 社群运营</h3><p>围绕用户生命周期和转化数据迭代运营策略，平均转化率 8%，入职第二个月总产达到公司 TOP3。</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">2020.09 — 2024.12</div><div><h3>王参军美术教育 · 美术教师</h3><p>独立维护 80–100 个家庭的长期关系，年均续费超过 85%；将用户心理洞察用于沟通和服务。</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">2016 — 2020</div><div><h3>马鞍山师范高等专科学校 · 美术教育</h3><p>大专，学习美术教育、心理学与教育学。</p></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer wrap" id="contact">
+      <div class="footer-cta"><div><div class="section-kicker">Contact / 合作与求职</div><h2>想聊 GEO 获客、内容运营或企业代运营？</h2></div><div class="footer-links"><a class="button button-primary" href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank" rel="noreferrer">抖音主页</a><a class="button" href="https://www.xiaohongshu.com/user/profile/666460df0000000003031688" target="_blank" rel="noreferrer">小红书主页</a></div></div>
+      <div class="footer-bottom"><span>方成 · GEO 获客运营作品集</span><span>数据更新于 2026.10.02 · 企业客户案例已匿名处理</span></div>
+    </footer>
+  </body>
+</html>
