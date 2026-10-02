@@ -558,3 +558,68 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .case-visual .service-note-gallery { height: 320px; gap: 7px; padding: 7px; }
   .case-visual .service-note-gallery figcaption { font-size: 10px; }
 }
+
+/* Focused refinements: iteration narrative, readable proof, creator links, and contact. */
+.lead-iteration-copy, .service-proof-copy { margin: 0; color: #b5b5ba; font-size: 14px; line-height: 1.65; }
+.case-visual .lead-proof figcaption b { margin-right: 5px; color: var(--green); font-size: 13px; }
+.case-visual .service-phase-gallery { display: grid; flex: 1; min-height: 0; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px; align-content: center; padding: 14px; border: 1px solid #374247; border-radius: 16px; background: linear-gradient(145deg,#1b2427,#111517); }
+.service-phase-gallery figure { min-width: 0; margin: 0; padding: 10px; border: 1px solid #3d4548; border-radius: 12px; background: #e8e8e8; }
+.service-phase-gallery figcaption { margin-bottom: 8px; color: #143034; font-size: 12px; font-weight: 700; }
+.service-phase-gallery img { display: block; width: 100%; height: auto; border: 1px solid #d7d7d7; background: white; }
+.case-row .case-card[data-category="search"] .geo-proof { display: block; grid-template-columns: none; width: 100%; }
+.case-row .geo-proof-stats { width: 100%; }
+.case-row .geo-proof-stats div { width: 100%; min-height: 85px; padding: 10px 17px; }
+.case-row .case-card[data-category="search"] .geo-proof-stats strong { font-family: "Arial Black", "PingFang SC", sans-serif; font-size: clamp(47px, 4.7vw, 66px); font-weight: 900; line-height: 1; letter-spacing: -.07em; }
+.case-row .geo-proof-stats div span { max-width: 125px; font-size: 13px; }
+.account-showcase { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,.85fr); gap: 17px; align-items: stretch; margin-top: 24px; }
+.account-showcase .social-image-grid { display: block; margin: 0; }
+.account-showcase .social-image-grid figure { width: 100%; }
+.account-showcase .social-image-grid .account-mobile-image { width: 100%; }
+.account-side { display: flex; min-width: 0; flex-direction: column; gap: 14px; padding: 15px; border: 1px solid #343439; border-radius: 13px; background: #171719; }
+.account-side-label { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .1em; }
+.account-metrics { display: grid; gap: 8px; }
+.account-metrics div { display: flex; align-items: baseline; justify-content: space-between; gap: 5px; padding: 12px 0; border-bottom: 1px solid #3b3b3f; }
+.account-metrics strong { color: #f4f4f1; font: 900 clamp(20px,2vw,29px)/1 "Arial Black","PingFang SC",sans-serif; letter-spacing: -.05em; }
+.account-metrics span { color: #aaa9ae; font-size: 10px; text-align: right; }
+.account-side .social-links { display: grid; gap: 8px; margin: 0; }
+.account-side .social-link { display: block; padding: 9px; font-size: 11px; line-height: 1.4; }
+.account-side .button { margin-top: auto; padding: 10px 12px; font-size: 11px; line-height: 1.4; }
+.contact-section { padding: 100px 0 110px; }
+.contact-panel { display: grid; grid-template-columns: minmax(180px,230px) minmax(0,1fr) minmax(180px,220px); gap: clamp(20px,3vw,42px); align-items: center; margin-top: 18px; padding: clamp(24px,3.5vw,46px); border: 1px solid #38383d; border-radius: 24px; background: radial-gradient(circle at 92% 7%,rgba(164,255,83,.09),transparent 34%),#151518; }
+.contact-portrait { display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 14px; }
+.contact-main h2 { margin: 0 0 15px; color: #f3f4f0; font-family: "Smiley Sans","PingFang SC",sans-serif; font-size: clamp(40px,4.5vw,65px); font-weight: 900; letter-spacing: -.06em; }
+.contact-main h2 span { color: var(--green); }
+.contact-main p { max-width: 600px; margin: 0 0 24px; color: #b4b3b7; font-size: 15px; line-height: 1.75; }
+.contact-methods { display: flex; flex-wrap: wrap; gap: 10px; }
+.contact-methods > * { display: flex; min-width: 165px; flex-direction: column; gap: 5px; padding: 12px 15px; border: 1px solid #414147; border-radius: 12px; color: #f0f0f2; }
+.contact-methods a:hover { border-color: var(--green); color: var(--green); }
+.contact-methods small { color: #919097; font-size: 11px; }
+.contact-methods strong { font-size: 13px; overflow-wrap: anywhere; }
+.contact-qr { padding: 13px; border-radius: 15px; background: #f5f5f5; text-align: center; }
+.contact-qr img { display: block; width: 100%; aspect-ratio: 1; }
+.contact-qr span { display: block; margin-top: 9px; color: #28282a; font-size: 12px; font-weight: 700; }
+@media (max-width: 1100px) {
+  .account-showcase { grid-template-columns: minmax(0,1fr) minmax(0,.9fr); }
+  .contact-panel { grid-template-columns: 180px minmax(0,1fr) 175px; }
+}
+@media (max-width: 800px) {
+  .account-showcase { grid-template-columns: 1fr; }
+  .account-showcase .social-image-grid { max-width: 390px; justify-self: center; }
+  .account-side { width: 100%; }
+  .contact-panel { grid-template-columns: 120px minmax(0,1fr); align-items: start; }
+  .contact-qr { grid-column: 1 / -1; width: min(100%,230px); justify-self: center; }
+}
+@media (max-width: 520px) {
+  .case-visual .service-phase-gallery { gap: 8px; padding: 8px; }
+  .service-phase-gallery figure { padding: 5px; }
+  .service-phase-gallery figcaption { font-size: 10px; }
+  .case-row .geo-proof-stats div { min-height: 76px; padding: 10px 13px; }
+  .case-row .case-card[data-category="search"] .geo-proof-stats strong { font-size: clamp(44px,12vw,56px); }
+  .case-row .geo-proof-stats div span { font-size: 11px; }
+  .contact-section { padding: 72px 0 82px; }
+  .contact-panel { grid-template-columns: 90px minmax(0,1fr); gap: 18px; padding: 18px; }
+  .contact-main h2 { font-size: 35px; }
+  .contact-main p { font-size: 13px; }
+  .contact-methods { grid-column: 1 / -1; }
+  .contact-methods > * { min-width: 100%; }
+}
