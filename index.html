@@ -202,49 +202,66 @@
         *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
       }
     </style>
+    <link rel="stylesheet" href="./visual-v2.css" />
+    <script defer src="./motion.js"></script>
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="方成主页"><span class="brand-mark">FC</span><span class="brand-name">FANG CHENG · PORTFOLIO</span></a>
+      <a class="brand" href="#home" aria-label="方成主页"><span class="brand-mark">成</span><span class="brand-name">方成 · 个人作品集</span></a>
       <nav class="nav" aria-label="主导航">
         <a href="#home">首页</a><a href="#work">项目</a><a href="#creator">个人账号</a><a href="#about">关于</a><a class="nav-contact" href="#contact">联系</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero wrap" id="home">
-        <div class="hero-grid">
-          <div>
-            <div class="eyebrow">GEO · 小红书内容获客 · 企业代运营</div>
-            <h1>GEO<span>GROWTH</span></h1>
-            <p class="hero-copy"><strong>方成 / GEO 获客运营</strong><br />围绕用户问题做内容，让品牌进入小红书搜索与点点 AI 回答，并持续带来有效咨询。</p>
-            <p class="hero-note">擅长 GEO 业务获客运营、小红书点点 AI 搜索优化，以及面向企业客户的内容代运营项目。</p>
-            <div class="hero-actions"><a class="button button-primary" href="#work">看项目结果</a><a class="button" href="#creator">看个人账号</a></div>
+      <section class="hero" id="home">
+        <div class="wrap hero-grid">
+          <div class="hero-content">
+            <div class="eyebrow">方成 · GEO 业务获客运营</div>
+            <h1>让内容<span>带来<span class="pink-word">结果</span></span></h1>
+            <p class="hero-copy">围绕真实的客户问题做内容，让品牌出现在小红书搜索与点点 AI 回答中，带来可以验证的咨询。</p>
+            <p class="hero-note">小红书点点 AI 搜索优化 / GEO 业务获客 / 企业内容代运营</p>
+            <div class="hero-actions"><a class="button button-primary" href="#work">看项目结果 <span aria-hidden="true">↗</span></a><a class="button" href="#creator">看个人作品</a></div>
           </div>
-          <div class="hero-side" aria-label="代表业绩">
-            <div class="hero-side-label">运营结果 / Selected metrics</div>
-            <div class="hero-metric"><strong class="pink">≈20</strong><span>月均新增微信<br />按简历统计口径</span></div>
-            <div class="hero-metric"><strong class="cyan">83.8%</strong><span>有效加微率<br />累计转化结果</span></div>
-            <div class="hero-metric"><strong>5×</strong><span>腕表品牌项目<br />连续合作周期</span></div>
+          <div class="hero-portrait-wrap">
+            <img class="hero-portrait" src="./assets/fangcheng-portrait.jpg" alt="方成个人照片" fetchpriority="high" />
+            <div class="portrait-caption"><b>方成</b><span>内容运营 / GEO 获客</span></div>
           </div>
+        </div>
+        <div class="hero-bottom wrap"><span>向下浏览项目与结果</span><span aria-hidden="true">↓</span></div>
+      </section>
+
+      <div class="ticker" aria-label="专业方向"><div class="ticker-track"><span>从问题出发</span><span>小红书点点 AI 搜索优化</span><span>用结果验证</span><span>企业内容代运营</span><span>形成可复用方法</span><span>从问题出发</span><span>小红书点点 AI 搜索优化</span><span>用结果验证</span><span>企业内容代运营</span><span>形成可复用方法</span></div></div>
+
+      <section class="result-snapshot wrap" aria-labelledby="result-title">
+        <div class="result-intro"><div class="section-kicker">代表结果</div><h2 id="result-title">成果，要有<span>清楚的口径。</span></h2></div>
+        <div class="result-list">
+          <div class="result-item"><strong>约 20<span>人 / 月</span></strong><h3>GEO 业务月均新增加微</h3><p>持续内容获客，数量为简历统计约数。</p></div>
+          <div class="result-item"><strong>83.8<span>%</span></strong><h3>累计加微有效率</h3><p>用于衡量咨询质量，与月均人数的统计周期不同。</p></div>
+          <div class="result-item"><strong>5<span>个周期</span></strong><h3>腕表品牌连续合作</h3><p>企业内容代运营项目的持续合作结果。</p></div>
         </div>
       </section>
 
-      <div class="ticker" aria-label="能力关键词"><div class="ticker-track"><span>GEO LEAD OPS</span><span>小红书点点 AI 搜索优化</span><span>CONTENT OPERATION</span><span>企业内容代运营</span><span>KOC CAMPAIGN</span><span>从结果复盘到方法复用</span><span>GEO LEAD OPS</span><span>小红书点点 AI 搜索优化</span><span>CONTENT OPERATION</span><span>企业内容代运营</span></div></div>
-
       <section class="section wrap" id="work">
-        <div class="section-heading"><div><div class="section-kicker">Selected work / 结果优先</div><h2>Work collection</h2></div><p>每个案例先讲业务问题与结果，再展开执行过程、证据和可复用的方法。</p></div>
+        <div class="section-heading"><div><div class="section-kicker">精选项目 · 结果优先</div><h2>做过的<span>项目</span></h2></div><p>先看结果，再看我是怎么完成、怎样验证，以及哪些方法可以复用。</p></div>
+        <div class="case-filters" aria-label="筛选项目"><button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">全部项目</button><button class="filter-button" type="button" data-filter="search" aria-pressed="false">AI 搜索</button><button class="filter-button" type="button" data-filter="lead" aria-pressed="false">业务获客</button><button class="filter-button" type="button" data-filter="service" aria-pressed="false">企业代运营</button></div>
         <div class="case-grid">
-          <a class="case-card" style="--card-accent: var(--green)" href="#geo-case">
+          <a class="case-card" data-category="search" style="--card-accent: var(--green)" href="#geo-case">
             <div><div class="case-meta"><span class="case-index">01</span> GEO / AI 搜索优化</div><h3>让目标品牌进入点点 AI 的真实回答</h3><p class="case-summary">基于关键词和已有信源规划内容，以固定账号与设备做重复验证，确认品牌出现不是一次性的截图结果。</p></div>
+            <img class="case-image" src="./assets/geo-search.jpg" alt="以透明内容卡片表现 AI 搜索与内容信源的概念视觉" loading="lazy" />
+            <small class="image-caption">概念视觉 · 项目结果见下方详情</small>
             <div class="case-result"><strong>10 / 10</strong><span>目标关键词均进入回答<br />最高设备覆盖 10 / 10</span></div>
           </a>
-          <a class="case-card" style="--card-accent: var(--pink)" href="#lead-case">
+          <a class="case-card" data-category="lead" style="--card-accent: var(--pink)" href="#lead-case">
             <div><div class="case-meta"><span class="case-index">02</span> GEO / 获客运营</div><h3>把内容运营连接到每月有效咨询</h3><p class="case-summary">负责公司 GEO 业务的获客运营，围绕潜在客户的问题持续选题、生产内容、发布和复盘。</p></div>
+            <img class="case-image" src="./assets/shanghai-night.jpg" alt="项目演示文稿中使用的上海夜景照片" loading="lazy" />
+            <small class="image-caption">项目演示文稿配图</small>
             <div class="case-result"><strong>≈20 / 月</strong><span>月均新增微信约 20 人<br />累计有效率 83.8%</span></div>
           </a>
-          <a class="case-card wide-card" style="--card-accent: var(--cyan)" href="#service-case">
+          <a class="case-card wide-card" data-category="service" style="--card-accent: var(--cyan)" href="#service-case">
             <div><div class="case-meta"><span class="case-index">03</span> 企业内容代运营 / KOC 种草</div><h3>从客户 brief 到 KOC 发布与结果回收，独立推进项目全流程</h3><p class="case-summary">服务高端腕表、高端全屋定制、香港求职培训等企业客户。独立完成需求拆解、brief、KOC 建联、稿件审核、发布跟踪与数据回收。累计产出 160 篇 KOC / 素人笔记；腕表项目续约 5 个周期，家装项目续约 2 轮。</p></div>
+            <img class="case-image" src="./assets/content-service.jpg" alt="以腕表、家装和创作场景表现多行业内容项目的概念视觉" loading="lazy" />
+            <small class="image-caption">概念视觉 · 客户资料已匿名处理</small>
             <div class="case-result"><strong>160 篇</strong><span>多行业企业代运营内容<br />以复购和续约验证交付质量</span></div>
           </a>
         </div>
@@ -252,8 +269,8 @@
 
       <section class="proof-band">
         <div class="wrap">
-          <div class="section-kicker">Method / 能复用的结果</div>
-          <h2 class="proof-title">把每次执行沉淀成<span>下一次能复用的做法</span></h2>
+          <div class="section-kicker">我的工作方法</div>
+          <h2 class="proof-title">把结果做出来，<span>把方法留下来。</span></h2>
           <div class="proof-steps">
             <div class="proof-step"><b>01</b><strong>定目标</strong><small>先明确目标词、目标客户和验收口径。</small></div>
             <div class="proof-step"><b>02</b><strong>找机会</strong><small>分析搜索结果、竞品和已有内容信源。</small></div>
@@ -266,7 +283,7 @@
 
       <section class="wrap" aria-label="项目详情">
         <div class="details" id="geo-case">
-          <div class="details-aside"><div class="section-kicker">01 / GEO & AI 搜索</div><h2>品牌进入点点 AI 回答</h2><p>把“发了多少篇”还原成一条可核验的因果链：目标词、内容部署、平台回答、设备复测和复盘资产。</p></div>
+          <div class="details-aside"><div class="section-kicker">案例 01 · AI 搜索优化</div><h2>品牌进入点点 AI 回答</h2><p>把“发了多少篇”还原成一条可核验的因果链：目标词、内容部署、平台回答、设备复测和复盘资产。</p></div>
           <div>
             <article class="case-detail">
               <div class="detail-head"><h3>小红书点点 AI 搜索优化实验</h3><span class="detail-tag">2026 · 2.5 周</span></div>
@@ -283,7 +300,7 @@
         </div>
 
         <div class="details" id="lead-case">
-          <div class="details-aside"><div class="section-kicker">02 / Lead operation</div><h2>从内容找到客户</h2><p>获客内容的评价标准是有没有带来合适的对话，以及对话能不能有效进入下一步。</p></div>
+          <div class="details-aside"><div class="section-kicker">案例 02 · 业务获客</div><h2>从内容找到客户</h2><p>获客内容的评价标准是有没有带来合适的对话，以及对话能不能有效进入下一步。</p></div>
           <div>
             <article class="case-detail">
               <div class="detail-head"><h3>公司 GEO 业务获客运营</h3><span class="detail-tag">持续运营</span></div>
@@ -295,7 +312,7 @@
         </div>
 
         <div class="details" id="service-case">
-          <div class="details-aside"><div class="section-kicker">03 / 企业内容代运营</div><h2>KOC 项目全流程</h2><p>服务其他企业做内容代运营，把项目交付拆成客户能确认、执行中能追踪、结束后能复盘的具体环节。</p></div>
+          <div class="details-aside"><div class="section-kicker">案例 03 · 企业内容代运营</div><h2>独立推进项目全流程</h2><p>服务其他企业做内容代运营，把项目交付拆成客户能确认、执行中能追踪、结束后能复盘的具体环节。</p></div>
           <div>
             <article class="case-detail">
               <div class="detail-head"><h3>多行业 KOC 与素人内容服务</h3><span class="detail-tag">160 篇累计产出</span></div>
@@ -308,29 +325,30 @@
       </section>
 
       <section class="social-section wrap" id="creator">
-        <div class="section-heading"><div><div class="section-kicker">Personal channel / 个人创作</div><h2>Creator account</h2></div><p>个人账号展示持续创作能力。商业客户项目与个人内容分开展示，各自按对应结果评价。</p></div>
+        <div class="section-heading"><div><div class="section-kicker">个人创作账号</div><h2>我的<span>作品</span></h2></div><p>个人账号展示持续创作能力。商业客户项目与个人内容分开展示，各自按对应结果评价。</p></div>
         <div class="social-grid">
           <article class="social-card">
-            <div><div class="social-platform">Douyin · 个人绘画账号</div><h3>未济</h3><div class="social-handle">手绘创作 · 热点人物与故事表达 · 粉丝头像定制</div>
+            <div><div class="social-platform">抖音 · 个人绘画账号</div><h3>未济</h3><div class="social-handle">手绘创作 · 热点人物与故事表达 · 粉丝头像定制</div>
+              <img class="social-image" src="./assets/creator-art.jpg" alt="绘画创作主题的概念视觉；实际作品见下方链接" loading="lazy" />
               <div class="social-stats"><div class="social-stat"><strong>56</strong><span>公开作品</span></div><div class="social-stat"><strong>1,931</strong><span>粉丝</span></div><div class="social-stat"><strong>1.2 万</strong><span>获赞</span></div></div>
               <div class="social-links"><a class="social-link" href="https://www.douyin.com/video/7671533516735953762" target="_blank" rel="noreferrer">《晚安树哥》 · 62.4 万播放</a><a class="social-link" href="https://www.douyin.com/video/7656383777392561507" target="_blank" rel="noreferrer">Oliver Tree 头像 · 11.3 万播放</a><a class="social-link" href="https://www.douyin.com/note/7671661548808930275" target="_blank" rel="noreferrer">许家印手绘 · 8.1 万播放</a></div>
             </div>
-            <a class="button" href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank" rel="noreferrer">打开抖音主页</a>
+            <a class="button" href="https://www.douyin.com/video/7671533516735953762" target="_blank" rel="noreferrer">查看抖音代表作品 ↗</a>
           </article>
           <article class="social-card xhs">
-            <div><div class="social-platform" style="color: var(--pink)">Xiaohongshu · 个人内容账号</div><h3>小红书作品</h3><div class="social-handle">持续积累平台原生内容与账号运营实践</div>
-              <p class="case-summary" style="margin-top:24px">这里作为个人内容作品入口，与企业代运营案例分开展示。账号后台的笔记与粉丝数据尚未核实，当前不展示具体数字。</p>
-              <div class="social-stats"><div class="social-stat"><strong style="color:var(--pink)">作品</strong><span>点击查看个人主页</span></div><div class="social-stat"><strong style="color:var(--purple)">内容</strong><span>持续更新中</span></div></div>
+            <div><div class="social-platform" style="color: var(--pink)">小红书 · 个人内容账号</div><h3>小红书作品</h3><div class="social-handle">持续积累平台原生内容与账号运营实践</div>
+              <img class="social-image" src="./assets/xhs-concept.jpg" alt="个人内容创作主题的概念视觉；实际作品请打开主页查看" loading="lazy" />
+              <p class="case-summary" style="margin-top:20px">这里作为个人内容作品入口，与企业代运营案例分开展示。账号后台数据尚未核实，暂不展示具体数字。</p>
             </div>
             <a class="button" href="https://www.xiaohongshu.com/user/profile/666460df0000000003031688" target="_blank" rel="noreferrer">打开小红书主页</a>
           </article>
         </div>
-        <p class="social-disclaimer">抖音粉丝、获赞、作品和视频播放数为 2026-10-02 主页显示值，会随账号更新而变化。</p>
+        <p class="social-disclaimer">抖音粉丝、获赞、作品和视频播放数为 2026-10-02 主页显示值，会随账号更新而变化。账号区配图为概念视觉，真实作品以外链为准。</p>
       </section>
 
       <section class="about" id="about">
         <div class="wrap about-grid">
-          <div><div class="section-kicker">About / 简历</div><h2>内容运营<br />以结果复盘</h2><p class="about-lede">从艺术教学到社群运营，再到 GEO 获客和企业内容代运营。我关注用户为什么搜索、什么信息能解决问题，以及内容最后有没有带来有效结果。</p><div class="skills"><span class="skill">小红书运营</span><span class="skill">点点 AI 搜索优化</span><span class="skill">企业获客</span><span class="skill">内容代运营</span><span class="skill">KOC 建联与管理</span><span class="skill">数据复盘</span><span class="skill">A/B 测试</span><span class="skill">AI 内容工作流</span><span class="skill">剪映</span><span class="skill">Photoshop</span></div></div>
+          <div><div class="section-kicker">关于我 · 简历</div><h2>内容运营<br />以结果复盘</h2><p class="about-lede">从艺术教学到社群运营，再到 GEO 获客和企业内容代运营。我关注用户为什么搜索、什么信息能解决问题，以及内容最后有没有带来有效结果。</p><div class="skills"><span class="skill">小红书运营</span><span class="skill">点点 AI 搜索优化</span><span class="skill">企业获客</span><span class="skill">内容代运营</span><span class="skill">KOC 建联与管理</span><span class="skill">数据复盘</span><span class="skill">A/B 测试</span><span class="skill">AI 内容工作流</span><span class="skill">剪映</span><span class="skill">Photoshop</span></div></div>
           <div class="timeline">
             <div class="timeline-item"><div class="timeline-date">2025.12 — 至今</div><div><h3>库品（上海）网络科技有限公司 · 运营</h3><p>负责 GEO 业务获客运营、小红书点点 AI 搜索优化及多行业企业内容代运营。</p></div></div>
             <div class="timeline-item"><div class="timeline-date">2024.02 — 2025.11</div><div><h3>英语流利说 · 社群运营</h3><p>围绕用户生命周期和转化数据迭代运营策略，平均转化率 8%，入职第二个月总产达到公司 TOP3。</p></div></div>
@@ -342,7 +360,7 @@
     </main>
 
     <footer class="footer wrap" id="contact">
-      <div class="footer-cta"><div><div class="section-kicker">Contact / 合作与求职</div><h2>想聊 GEO 获客、内容运营或企业代运营？</h2></div><div class="footer-links"><a class="button button-primary" href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank" rel="noreferrer">抖音主页</a><a class="button" href="https://www.xiaohongshu.com/user/profile/666460df0000000003031688" target="_blank" rel="noreferrer">小红书主页</a></div></div>
+      <div class="footer-cta"><div><div class="section-kicker">联系我 · 合作与求职</div><h2>想聊 GEO 获客、内容运营或企业代运营？</h2></div><div class="footer-links"><a class="button button-primary" href="https://www.douyin.com/video/7671533516735953762" target="_blank" rel="noreferrer">抖音代表作品</a><a class="button" href="https://www.xiaohongshu.com/user/profile/666460df0000000003031688" target="_blank" rel="noreferrer">小红书主页</a></div></div>
       <div class="footer-bottom"><span>方成 · GEO 获客运营作品集</span><span>数据更新于 2026.10.02 · 企业客户案例已匿名处理</span></div>
     </footer>
   </body>
