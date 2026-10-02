@@ -660,3 +660,21 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .project-layout > .case-filters { position:static; flex-direction:row; flex-wrap:wrap; margin:0 0 22px; }
   .project-layout .filter-button { width:auto; min-height:40px; justify-content:center; text-align:center; }
 }
+
+
+/* The rail follows the project currently being read; each color matches its card. */
+.project-layout .case-filters.has-current .filter-button[data-filter="all"].is-active {
+  background: transparent;
+  color: #c9c9ce;
+  border-color: #48484d;
+  font-weight: 400;
+}
+.project-layout .filter-button.is-current {
+  background: var(--current-project-color, var(--green));
+  border-color: var(--current-project-color, var(--green));
+  color: #101010;
+  font-weight: 750;
+}
+.project-layout .filter-button.is-current[data-filter="lead"] { --current-project-color: var(--pink); }
+.project-layout .filter-button.is-current[data-filter="service"] { --current-project-color: var(--cyan); }
+.project-layout .filter-button.is-current[data-filter="search"] { --current-project-color: var(--green); }

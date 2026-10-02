@@ -60,3 +60,41 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '-18% 0px -62% 0px' });
   document.querySelectorAll('#home, #work, #creator, #about, #contact').forEach((section) => sectionObserver.observe(section));
 }
+
+
+// Highlight the project currently passing through the reading area.
+// This is independent of the click-to-filter selection above.
+const projectSection = document.querySelector('#work');
+if (projectSection && filterButtons.length && caseCards.length) {
+  const filterRail = projectSection.querySelector('.case-filters');
+  let projectFrame = 0;
+
+  const syncCurrentProject = () => {
+    projectFrame = 0;
+    const bounds = projectSection.getBoundingClientRect();
+    const inView = bounds.bottom > 96 && bounds.top < window.innerHeight * 0.82;
+    const visibleCards = Array.from(caseCards).filter((card) => !card.hidden);
+    const readingLine = Math.max(130, Math.min(window.innerHeight * 0.38, 360));
+    const currentCard = inView && visibleCards.length
+      ? visibleCards.find((card) => card.getBoundingClientRect().bottom > readingLine) || visibleCards[visibleCards.length - 1]
+      : null;
+    const currentCategory = currentCard?.dataset.category;
+
+    filterRail.classList.toggle('has-current', Boolean(currentCategory));
+    filterButtons.forEach((button) => {
+      const isCurrent = button.dataset.filter === currentCategory;
+      button.classList.toggle('is-current', isCurrent);
+      if (isCurrent) button.setAttribute('aria-current', 'location');
+      else button.removeAttribute('aria-current');
+    });
+  };
+
+  const scheduleCurrentProject = () => {
+    if (!projectFrame) projectFrame = window.requestAnimationFrame(syncCurrentProject);
+  };
+
+  window.addEventListener('scroll', scheduleCurrentProject, { passive: true });
+  window.addEventListener('resize', scheduleCurrentProject);
+  filterButtons.forEach((button) => button.addEventListener('click', scheduleCurrentProject));
+  scheduleCurrentProject();
+}
