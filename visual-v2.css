@@ -272,6 +272,50 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .social-stat strong { font-size: 32px; }
   .timeline-item { grid-template-columns: 94px 1fr; }
 }
+
+/* Case evidence and metric hierarchy refinements */
+.result-item { grid-template-columns: 1fr minmax(190px,.82fr); }
+.result-item strong { grid-column: 2; grid-row: 1 / span 2; justify-self: end; text-align: right; }
+.result-item h3, .result-item p { grid-column: 1; }
+.case-card[data-category="search"] .geo-proof { display: grid; grid-template-columns: 1.1fr .9fr; }
+.case-card[data-category="search"] .geo-proof-stats { position: relative; inset: auto; min-width: 0; }
+.case-card[data-category="search"] .geo-proof-stats div { background: #0c120be8; }
+.geo-evidence-image { display: block; height: 100%; min-width: 0; overflow: hidden; border: 1px solid #73866877; border-radius: 12px; background: #fff; }
+.geo-evidence-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .35s; }
+.geo-evidence-image:hover img { transform: scale(1.04); }
+.case-card[data-category="search"] .geo-proof-stats strong { font-size: clamp(38px, 3.8vw, 58px); }
+.case-card[data-category="search"] .case-result { display: none; }
+.lead-proof { grid-template-columns: repeat(3, minmax(0,1fr)); height: 300px; }
+.lead-proof figure, .social-image-grid figure { min-width: 0; margin: 0; }
+.lead-proof img { object-position: center; }
+.lead-proof figcaption, .social-image-grid figcaption { margin-top: 8px; color: #a0a0a5; font-size: 11px; text-align: center; }
+.social-image-grid { align-items: start; }
+.social-image-grid .social-image { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; object-position: center top; border-radius: 12px; }
+.social-image-grid figure:first-child .social-image { object-position: center top; }
+.social-stats { display: none !important; }
+.service-process { gap: 8px; }
+.service-process span { position: relative; }
+.service-process span:not(:last-child)::after { content: "↓"; position: absolute; left: 50%; bottom: -15px; color: var(--cyan); z-index: 1; }
+.case-card[data-category="service"] .case-result { margin-top: auto; }
+.proof-band { margin-top: 25px; }
+@media (max-width: 760px) {
+  .result-item { grid-template-columns: 1fr minmax(140px,.8fr); }
+  .case-card[data-category="search"] .geo-proof { grid-template-columns: 1fr; height: auto; gap: 10px; }
+  .case-card[data-category="search"] .geo-proof-stats { height: 215px; }
+  .geo-evidence-image { height: 165px; }
+  .lead-proof { height: 260px; }
+}
+@media (max-width: 520px) {
+  .result-item { grid-template-columns: 1fr; gap: 7px; }
+  .result-item strong { grid-column: 1; grid-row: 1; justify-self: start; text-align: left; }
+  .result-item h3, .result-item p { grid-column: 1; }
+  .case-card[data-category="search"] .geo-proof { display: grid; }
+  .case-card[data-category="search"] .geo-proof-stats { height: 220px; }
+  .geo-evidence-image { height: 150px; }
+  .lead-proof { height: 230px; gap: 5px; padding: 6px; }
+  .lead-proof figcaption { font-size: 9px; }
+  .social-image-grid .social-image { aspect-ratio: 9 / 16; }
+}
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
   .live-dot, .hero-title-star { animation: none; }
@@ -406,4 +450,45 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .detail-stat { min-height: 105px; }
   .detail-stat strong { font-size: 42px; }
   .proof-step small { max-width: none; }
+}
+
+/* Final evidence layout overrides */
+.result-item { grid-template-columns: 1fr minmax(190px,.82fr); }
+.result-item strong { grid-column: 2; grid-row: 1 / span 2; justify-self: end; text-align: right; }
+.result-item h3, .result-item p { grid-column: 1; }
+.case-card[data-category="search"] .geo-proof { display: grid; grid-template-columns: 1.05fr .95fr; gap: 10px; }
+.case-card[data-category="search"] .geo-proof-stats { position: relative; inset: auto; min-width: 0; }
+.case-card[data-category="search"] .geo-proof-stats div { background: #0c120be8; }
+.geo-evidence-image { display: block; height: 100%; min-width: 0; overflow: hidden; border: 1px solid #73866877; border-radius: 12px; background: #fff; }
+.geo-evidence-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.case-card[data-category="search"] .geo-proof-stats strong { font-size: clamp(38px, 3.8vw, 58px); }
+.case-card[data-category="search"] .case-result { display: none; }
+.lead-proof { grid-template-columns: repeat(3, minmax(0,1fr)); height: 300px; }
+.lead-proof figure, .social-image-grid figure { min-width: 0; margin: 0; }
+.lead-proof img { object-position: center; }
+.lead-proof figcaption, .social-image-grid figcaption { margin-top: 8px; color: #a0a0a5; font-size: 11px; text-align: center; }
+.social-image-grid { align-items: start; }
+.social-image-grid .social-image { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; object-position: center top; border-radius: 12px; }
+.social-stats { display: none !important; }
+.service-process { gap: 8px; }
+.service-process span { position: relative; }
+.service-process span:not(:last-child)::after { content: "↓"; position: absolute; left: 50%; bottom: -15px; color: var(--cyan); z-index: 1; }
+.case-card[data-category="service"] .case-result { margin-top: auto; }
+.proof-band { margin-top: 25px; }
+@media (max-width: 760px) {
+  .result-item { grid-template-columns: 1fr minmax(140px,.8fr); }
+  .case-card[data-category="search"] .geo-proof { grid-template-columns: 1fr; height: auto; }
+  .case-card[data-category="search"] .geo-proof-stats { height: 215px; }
+  .geo-evidence-image { height: 165px; }
+  .lead-proof { height: 260px; }
+}
+@media (max-width: 520px) {
+  .result-item { grid-template-columns: 1fr; gap: 7px; }
+  .result-item strong { grid-column: 1; grid-row: 1; justify-self: start; text-align: left; }
+  .result-item h3, .result-item p { grid-column: 1; }
+  .case-card[data-category="search"] .geo-proof { display: grid; }
+  .case-card[data-category="search"] .geo-proof-stats { height: 220px; }
+  .geo-evidence-image { height: 150px; }
+  .lead-proof { height: 230px; gap: 5px; padding: 6px; }
+  .lead-proof figcaption { font-size: 9px; }
 }
