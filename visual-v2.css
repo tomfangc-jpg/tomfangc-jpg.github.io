@@ -615,11 +615,27 @@ body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "M
   .service-phase-gallery figcaption { font-size: 10px; }
   .case-row .geo-proof-stats div { min-height: 76px; padding: 10px 13px; }
   .case-row .case-card[data-category="search"] .geo-proof-stats strong { font-size: clamp(44px,12vw,56px); }
-  .case-row .geo-proof-stats div span { font-size: 11px; }
+.case-row .geo-proof-stats div span { font-size: 11px; }
   .contact-section { padding: 72px 0 82px; }
   .contact-panel { grid-template-columns: 90px minmax(0,1fr); gap: 18px; padding: 18px; }
   .contact-main h2 { font-size: 35px; }
   .contact-main p { font-size: 13px; }
   .contact-methods { grid-column: 1 / -1; }
   .contact-methods > * { min-width: 100%; }
+}
+
+/* Keep the editable text wrapper from shrinking the three proof numbers. */
+.case-row .case-card[data-category="search"] .geo-proof-stats div { min-height: 106px; }
+.case-row .case-card[data-category="search"] .geo-proof-stats strong { display: inline-flex; align-items: center; min-height: 82px; font-size: clamp(68px, 5.7vw, 82px); line-height: .95; letter-spacing: -.075em; }
+.case-row .case-card[data-category="search"] .geo-proof-stats div:last-child strong { font-size: clamp(55px, 4.8vw, 70px); }
+.case-row .case-card[data-category="search"] .geo-proof-stats strong > .editable-text-run { color: inherit; font: inherit; letter-spacing: inherit; line-height: inherit; white-space: nowrap; }
+
+.social-grid .social-card { justify-content: flex-start; }
+.account-showcase .social-image-grid figure { width: min(100%, 330px); }
+.account-showcase .social-image-grid .account-mobile-image { width: 100%; height: auto; }
+
+@media (max-width: 520px) {
+  .case-row .case-card[data-category="search"] .geo-proof-stats div { min-height: 86px; }
+  .case-row .case-card[data-category="search"] .geo-proof-stats strong { min-height: 62px; font-size: clamp(49px, 13vw, 62px); }
+  .case-row .case-card[data-category="search"] .geo-proof-stats div:last-child strong { font-size: clamp(42px, 11vw, 53px); }
 }
