@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="description" content="方成的个人作品集与简历：GEO获客运营、小红书点点AI搜索优化、企业内容代运营与个人创作账号。" />
+    <title>方成的个人作品集｜GEO 获客运营与内容创作</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%239bff4f'/%3E%3Cpath d='M14 47V17h13c12 0 19 5 19 15S39 47 27 47H14zm10-8h4c6 0 9-2 9-7s-3-7-9-7h-4v14z' fill='%23050505'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050505;
+        --surface: #111113;
+        --surface-raised: #17171a;
+        --text: #f4f3ef;
+        --muted: #a3a2a5;
+        --line: #2b2a2d;
+        --green: #9bff4f;
+        --pink: #ff9aca;
+        --cyan: #66dff5;
+        --purple: #b49aff;
+        --page: min(1240px, calc(100% - 72px));
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; background: var(--bg); }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+      ::selection { background: var(--green); color: #080808; }
+      .wrap { width: var(--page); margin-inline: auto; }
+      .topbar {
+        position: sticky; top: 0; z-index: 20; height: 68px;
+        display: flex; align-items: center; justify-content: space-between;
+        padding-inline: max(36px, calc((100vw - 1240px) / 2));
+        background: rgba(5, 5, 5, .82); border-bottom: 1px solid rgba(255,255,255,.08);
+        backdrop-filter: blur(18px);
+      }
+      .brand { display: inline-flex; gap: 10px; align-items: center; font-weight: 800; letter-spacing: -.04em; }
+      .brand-mark { width: 25px; height: 25px; border-radius: 7px; display: grid; place-items: center; background: var(--green); color: #070707; font: 900 12px/1 Arial, sans-serif; }
+      .brand-name { font-size: 14px; }
+      .nav { display: flex; gap: clamp(18px, 3.2vw, 42px); align-items: center; color: #b9b8bc; font-size: 13px; }
+      .nav a { transition: color .2s ease; }
+      .nav a:hover { color: var(--green); }
+      .nav-contact { padding: 8px 16px; border-radius: 99px; color: #080808 !important; background: var(--text); font-weight: 700; }
+      .nav-contact:hover { background: var(--green); }
+      .hero { min-height: 650px; display: grid; align-items: center; padding: 72px 0 86px; overflow: hidden; }
+      .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; align-items: end; gap: 5vw; }
+      .eyebrow, .section-kicker { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+      .hero h1 { margin: 28px 0 23px; font-family: Impact, "Arial Narrow", sans-serif; font-size: clamp(88px, 15vw, 190px); line-height: .76; font-weight: 500; letter-spacing: -.045em; }
+      .hero h1 span { display: block; color: var(--green); }
+      .hero-copy { max-width: 640px; margin: 0; color: #cfced1; font-size: clamp(19px, 2.1vw, 27px); line-height: 1.55; letter-spacing: -.035em; }
+      .hero-copy strong { color: var(--text); font-weight: 700; }
+      .hero-note { max-width: 600px; margin: 17px 0 0; color: var(--muted); font-size: 15px; }
+      .hero-side { border-top: 1px solid var(--line); padding-top: 20px; }
+      .hero-side-label { color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+      .hero-metric { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 12px; margin-top: 17px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+      .hero-metric strong { font: 500 clamp(46px, 6vw, 78px)/.9 Impact, "Arial Narrow", sans-serif; letter-spacing: -.02em; }
+      .hero-metric span { max-width: 155px; color: var(--muted); font-size: 13px; text-align: right; }
+      .hero-metric .pink { color: var(--pink); }
+      .hero-metric .cyan { color: var(--cyan); }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+      .button { display: inline-flex; min-height: 47px; align-items: center; justify-content: center; padding: 0 21px; border: 1px solid var(--line); border-radius: 99px; color: var(--text); font-size: 14px; font-weight: 700; transition: transform .2s, border-color .2s, background .2s; }
+      .button:hover { transform: translateY(-2px); border-color: var(--green); }
+      .button-primary { background: var(--green); border-color: var(--green); color: #080808; }
+      .button-primary:hover { background: #b5ff83; }
+      .ticker { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .ticker-track { display: flex; width: max-content; gap: 44px; padding: 14px 0; color: #848387; font: 500 12px/1 Arial, sans-serif; letter-spacing: .18em; white-space: nowrap; }
+      .ticker-track span:nth-child(3n+1) { color: var(--green); }
+      section { scroll-margin-top: 76px; }
+      .section { padding: 106px 0; }
+      .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 39px; }
+      .section-heading h2 { margin: 9px 0 0; font: 500 clamp(42px, 7vw, 88px)/.92 Impact, "Arial Narrow", sans-serif; letter-spacing: -.025em; text-transform: uppercase; }
+      .section-heading p { max-width: 350px; margin: 0 0 4px; color: var(--muted); font-size: 14px; }
+      .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+      .case-card { position: relative; min-height: 370px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: clamp(24px, 3.4vw, 43px); border: 1px solid #202023; border-radius: 24px; background: var(--surface); transition: border-color .25s, transform .25s; }
+      .case-card:hover { transform: translateY(-4px); border-color: #4b4b4e; }
+      .case-card::after { content: ""; position: absolute; top: 29px; right: 30px; width: 11px; height: 11px; border-radius: 50%; background: var(--card-accent, var(--green)); box-shadow: 0 0 25px color-mix(in srgb, var(--card-accent, var(--green)) 50%, transparent); }
+      .case-meta { display: flex; align-items: center; gap: 9px; color: var(--card-accent, var(--green)); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+      .case-index { color: #77767a; font: 13px/1 Arial, sans-serif; }
+      .case-card h3 { max-width: 580px; margin: 28px 0 14px; font-size: clamp(27px, 3vw, 39px); line-height: 1.22; letter-spacing: -.055em; }
+      .case-summary { max-width: 620px; margin: 0; color: #aaa9ad; font-size: 15px; }
+      .case-result { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-top: 35px; padding-top: 19px; border-top: 1px solid #303034; }
+      .case-result strong { color: var(--card-accent, var(--green)); font: 500 clamp(36px, 5vw, 61px)/.9 Impact, "Arial Narrow", sans-serif; white-space: nowrap; }
+      .case-result span { max-width: 195px; color: #b1b0b4; font-size: 12px; text-align: right; }
+      .wide-card { grid-column: 1 / -1; min-height: 337px; }
+      .wide-card .case-result { max-width: 760px; }
+      .proof-band { padding: 81px 0 88px; background: #0d0d0f; }
+      .proof-title { max-width: 980px; margin: 15px 0 44px; font-size: clamp(36px, 6.8vw, 82px); line-height: 1.05; letter-spacing: -.065em; }
+      .proof-title span { color: var(--pink); }
+      .proof-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid #333236; border-bottom: 1px solid #333236; }
+      .proof-step { min-height: 147px; padding: 20px 18px 22px 0; border-right: 1px solid #333236; }
+      .proof-step + .proof-step { padding-left: 19px; }
+      .proof-step:last-child { border-right: 0; }
+      .proof-step b { display: block; margin-bottom: 17px; color: var(--green); font: 14px/1 Arial, sans-serif; }
+      .proof-step strong { display: block; font-size: 17px; }
+      .proof-step small { display: block; max-width: 175px; margin-top: 8px; color: #969599; font-size: 12px; line-height: 1.55; }
+      .details { display: grid; grid-template-columns: .8fr 1.2fr; gap: 6vw; padding: 105px 0; border-bottom: 1px solid var(--line); }
+      .details-aside { position: sticky; top: 100px; align-self: start; }
+      .details-aside h2 { max-width: 410px; margin: 14px 0 20px; font: 500 clamp(40px, 5.7vw, 70px)/.95 Impact, "Arial Narrow", sans-serif; letter-spacing: -.02em; text-transform: uppercase; }
+      .details-aside p { max-width: 390px; color: var(--muted); font-size: 14px; }
+      .case-detail { padding: 0 0 38px; border-bottom: 1px solid var(--line); }
+      .case-detail + .case-detail { padding-top: 35px; }
+      .case-detail:last-child { padding-bottom: 0; border: 0; }
+      .detail-head { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+      .detail-head h3 { margin: 0; font-size: 26px; letter-spacing: -.05em; }
+      .detail-tag { flex: 0 0 auto; color: var(--green); font: 12px/1.5 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+      .detail-copy { max-width: 650px; margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+      .detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 23px; }
+      .detail-stat { padding: 18px; border-radius: 14px; background: #111113; }
+      .detail-stat strong { display: block; color: var(--cyan); font: 500 30px/1 Impact, "Arial Narrow", sans-serif; }
+      .detail-stat span { display: block; margin-top: 8px; color: #aaa9ad; font-size: 12px; }
+      .detail-note { margin-top: 17px; color: #8f8e92; font-size: 12px; }
+      .social-section { padding: 105px 0 111px; }
+      .social-grid { display: grid; grid-template-columns: 1.03fr .97fr; gap: 18px; }
+      .social-card { min-height: 370px; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(25px, 4vw, 48px); border-radius: 23px; background: var(--surface); border: 1px solid #222225; }
+      .social-card.xhs { background: #101011; }
+      .social-platform { color: var(--pink); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+      .social-card h3 { margin: 20px 0 8px; font-size: clamp(35px, 5vw, 58px); line-height: 1; letter-spacing: -.07em; }
+      .social-handle { color: #a8a7ab; font-size: 14px; }
+      .social-stats { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 35px; }
+      .social-stat strong { display: block; font: 500 40px/.95 Impact, "Arial Narrow", sans-serif; color: var(--green); }
+      .social-stat span { color: #a8a7ab; font-size: 11px; }
+      .social-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+      .social-link { display: inline-flex; padding: 9px 12px; border: 1px solid #39383c; border-radius: 99px; color: #d8d7da; font-size: 12px; transition: color .2s, border-color .2s; }
+      .social-link:hover { color: var(--green); border-color: var(--green); }
+      .social-card .button { align-self: start; margin-top: 24px; }
+      .social-disclaimer { margin: 17px 0 0; color: #77767b; font-size: 11px; }
+      .about { padding: 91px 0 104px; border-top: 1px solid var(--line); background: #0b0b0d; }
+      .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 7vw; }
+      .about h2 { margin: 14px 0 20px; font: 500 clamp(44px, 6vw, 77px)/.93 Impact, "Arial Narrow", sans-serif; text-transform: uppercase; }
+      .about-lede { max-width: 410px; color: #c2c1c5; font-size: 17px; line-height: 1.7; }
+      .timeline { border-top: 1px solid #333236; }
+      .timeline-item { display: grid; grid-template-columns: 125px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid #333236; }
+      .timeline-date { color: var(--green); font: 12px/1.5 Arial, sans-serif; letter-spacing: .06em; }
+      .timeline-item h3 { margin: 0; font-size: 17px; }
+      .timeline-item p { margin: 5px 0 0; color: #9e9da1; font-size: 13px; }
+      .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+      .skill { padding: 7px 11px; border: 1px solid #353438; border-radius: 99px; color: #b6b5b8; font-size: 11px; }
+      .footer { padding: 63px 0 26px; }
+      .footer-cta { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding-bottom: 47px; border-bottom: 1px solid var(--line); }
+      .footer-cta h2 { max-width: 720px; margin: 13px 0 0; font-size: clamp(35px, 6vw, 73px); line-height: 1; letter-spacing: -.07em; }
+      .footer-links { display: flex; gap: 10px; flex-wrap: wrap; }
+      .footer-bottom { display: flex; justify-content: space-between; gap: 15px; padding-top: 20px; color: #77767b; font-size: 11px; }
+      @media (max-width: 800px) {
+        :root { --page: calc(100% - 40px); }
+        .topbar { height: 60px; padding-inline: 20px; }
+        .nav { gap: 16px; font-size: 12px; }
+        .nav a:nth-child(3) { display: none; }
+        .nav-contact { padding: 7px 11px; }
+        .hero { min-height: auto; padding: 74px 0 69px; }
+        .hero-grid { grid-template-columns: 1fr; gap: 55px; }
+        .hero h1 { margin-top: 25px; font-size: clamp(85px, 21vw, 150px); }
+        .hero-side { max-width: 540px; }
+        .section { padding: 77px 0; }
+        .section-heading { align-items: start; flex-direction: column; }
+        .case-grid { grid-template-columns: 1fr; }
+        .wide-card { grid-column: auto; }
+        .case-card { min-height: 330px; }
+        .proof-band { padding: 65px 0; }
+        .proof-steps { grid-template-columns: 1fr; }
+        .proof-step, .proof-step + .proof-step { min-height: auto; padding: 16px 0; border-right: 0; border-bottom: 1px solid #333236; }
+        .proof-step:last-child { border-bottom: 0; }
+        .proof-step b { display: inline-block; width: 42px; margin: 0; }
+        .proof-step strong { display: inline; }
+        .proof-step small { max-width: none; margin-left: 45px; }
+        .details { grid-template-columns: 1fr; gap: 38px; padding: 76px 0; }
+        .details-aside { position: static; }
+        .social-section { padding: 77px 0; }
+        .social-grid { grid-template-columns: 1fr; }
+        .social-card { min-height: 340px; }
+        .about { padding: 75px 0; }
+        .about-grid { grid-template-columns: 1fr; gap: 38px; }
+        .footer-cta { align-items: start; flex-direction: column; }
+      }
+      @media (max-width: 470px) {
+        :root { --page: calc(100% - 32px); }
+        .topbar { padding-inline: 16px; }
+        .brand-name { display: none; }
+        .nav { gap: 13px; }
+        .hero h1 { font-size: 22vw; }
+        .hero-metric strong { font-size: 49px; }
+        .case-card { min-height: 325px; padding: 24px; border-radius: 19px; }
+        .case-result { align-items: start; flex-direction: column; }
+        .case-result span { max-width: 260px; text-align: left; }
+        .detail-grid { grid-template-columns: 1fr; }
+        .detail-stat { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .detail-stat span { margin: 0; text-align: right; }
+        .timeline-item { grid-template-columns: 95px 1fr; gap: 12px; }
+        .footer-bottom { flex-direction: column; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      }
+    </style>
+    <link rel="stylesheet" href="./visual-v2.css" />
+    <link rel="stylesheet" href="./editor.css" />
+    <link rel="stylesheet" href="./color-style.css" />
+    <script defer src="./motion.js"></script>
+    <script defer src="./inline-editor.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="方成主页"><span class="brand-mark">成</span><span class="brand-name">方成 · 个人作品集</span></a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#home">首页</a><a href="#work">项目</a><a href="#creator">个人账号</a><a href="#about">关于</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-video-scene" aria-label="方成的小红书真实手绘视频作品片段">
+          <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="./assets/xhs-drawing-poster.jpg" aria-hidden="true"><source src="./assets/xhs-drawing-loop.mp4" type="video/mp4" /></video>
+          <a class="hero-video-label" href="https://www.xiaohongshu.com/discovery/item/6a6d7377000000002203376a" target="_blank" rel="noreferrer"><span class="live-dot"></span> 《到底画多少画才能成角呀？》· 静音播放 ↗</a>
+        </div>
+        <div class="wrap hero-grid">
+          <div class="hero-content">
+            <div class="eyebrow">方成 / 新媒体运营 / 个人网站</div>
+            <h1><span class="hero-title-first">你好，我是<span class="hero-name">方成</span></span><span class="hero-title-second">这里是我的<br class="hero-mobile-break" />个人作品集<span class="hero-title-star" aria-hidden="true">✳</span></span></h1>
+            <p class="hero-copy">我专注于<strong>小红书、视频号、抖音等平台的GEO优化业务获客</strong>，负责公司在小红书点点 AI 的搜索优化项目及多行业内容代运营。能够独立完成需求梳理、选题策划、内容执行与数据复盘，并依据搜索表现、咨询质量和项目反馈持续优化。</p>
+            <div class="hero-actions"><a class="button button-primary" href="#work">看项目结果 <span aria-hidden="true">↗</span></a><a class="button" href="#creator">看个人作品</a></div>
+          </div>
+        </div>
+        <div class="hero-bottom wrap"><span>向下浏览项目与结果</span><span aria-hidden="true">↓</span></div>
+      </section>
+
+      <div class="ticker" aria-label="专业方向"><div class="ticker-track"><span>从问题出发</span><span>小红书点点 AI 搜索优化</span><span>用结果验证</span><span>企业内容代运营</span><span>形成可复用方法</span><span>从问题出发</span><span>小红书点点 AI 搜索优化</span><span>用结果验证</span><span>企业内容代运营</span><span>形成可复用方法</span></div></div>
+
+      <section class="result-snapshot wrap" aria-labelledby="result-title">
+        <div class="result-intro"><div class="section-kicker">代表结果</div><h2 id="result-title">新媒体运营<span>成果</span></h2></div>
+        <div class="result-list">
+          <div class="result-item"><strong>622<span>条</span></strong><h3>运营账号累计获客线索</h3><p>2025.12.15—2026.09.30，账号渠道客资按用户ID及联系方式去重，含引流素人号。</p></div>
+          <div class="result-item"><strong>369<span>条</span></strong><h3>进入加微环节的客资</h3><p>同一统计范围，包含企微及普微；其中340条未标记无效或重复，不等同于成交客户。</p></div>
+          <div class="result-item"><strong>3<span>类行业</span></strong><h3>多行业项目经验</h3><p>服务腕表、家装与职业培训等领域，快速理解业务与用户需求，并转化为可执行的内容方案。</p></div>
+          <div class="result-item"><strong>70<span>篇</span></strong><h3>企业业务内容制作与发布</h3><p>结合内容表现复盘选题与表达，在持续发布中验证并优化运营方向。</p></div>
+        </div>
+      </section>
+
+      <section class="section wrap" id="work">
+        <div class="section-heading"><div><div class="section-kicker">结果与执行</div><h2>项目<span>汇总</span></h2></div><p>每个项目都展示结果、执行过程与可复用的工作方法。</p></div>
+        <div class="project-layout">
+          <div class="case-filters" aria-label="筛选项目"><button class="filter-button" type="button" data-filter="lead">业务获客</button><button class="filter-button" type="button" data-filter="service">企业代运营</button><button class="filter-button" type="button" data-filter="search">小红书 GEO 优化</button></div>
+          <div class="case-grid">
+          <div class="case-row" data-category="lead">
+          <article class="case-card" data-category="lead" style="--card-accent: var(--pink)">
+            <div><div class="case-meta"><span class="case-index">01</span> GEO / 获客运营</div><h3>小红书 GEO 运营获客</h3><p class="case-summary">运营品牌账号及引流素人号，围绕潜在客户的问题持续选题、发布和复盘，并优化咨询承接路径。</p></div>
+            <div class="lead-proof" aria-label="源级引擎小红书主页两条置顶笔记封面"><a href="https://www.xiaohongshu.com/discovery/item/692ee77d000000001b033d2b" target="_blank" rel="noreferrer" aria-label="查看置顶笔记：GEO 避坑"><img src="./assets/geo-lead-pinned-1.webp" alt="源级引擎置顶笔记《别再被 GEO 优化割韭菜了》封面" loading="lazy" /></a><a href="https://www.xiaohongshu.com/discovery/item/696874cd000000001a01db46" target="_blank" rel="noreferrer" aria-label="查看置顶笔记：企业案例"><img src="./assets/geo-lead-pinned-2.webp" alt="源级引擎置顶笔记《这些头部企业为什么找我们做 GEO》封面" loading="lazy" /></a></div>
+            <div class="evidence-links"><a href="https://www.xiaohongshu.com/discovery/item/692ee77d000000001b033d2b" target="_blank" rel="noreferrer">置顶 01 · GEO 避坑 ↗</a><a href="https://www.xiaohongshu.com/discovery/item/696874cd000000001a01db46" target="_blank" rel="noreferrer">置顶 02 · 企业案例 ↗</a></div>
+            <div class="case-result"><strong>622 条</strong><span>账号渠道累计去重客资<br />其中369条进入加微环节</span></div>
+            <details class="case-notes"><summary>我的职责与成果</summary><div class="case-notes-body"><p>负责GEO 优化业务在小红书、视频号、抖音等平台的内容运营与获客，独立完成选题策划、文案撰写、图文/短视频制作、发布排期全流程，熟悉各平台内容调性与流量规则；配合小红书聚光投流优化内容素材并参与效果复盘，累计制作并发布 70篇笔记，平均每月获客25+，以数据复盘驱动内容持续迭代。</p></div></details>
+          </article>
+          <aside class="case-visual lead-visual" aria-label="GEO 获客账号内容配图">
+            <div class="visual-label">内容形式的持续迭代</div>
+            <p class="lead-iteration-copy">从业务痛点吸引关注，到拆解行业观点，再用具体场景承接搜索需求；依据内容反馈与有效咨询，持续调整选题、封面和表达。</p>
+            <div class="lead-proof"><figure><img src="./assets/content-style-01.svg" alt="GEO 内容样例：以广告预算与业务结果为切入点" loading="lazy" /><figcaption><b>01</b> 业务痛点切入</figcaption></figure><figure><img src="./assets/content-style-02.svg" alt="GEO 内容样例：长图拆解 AI 搜索话题" loading="lazy" /><figcaption><b>02</b> 观点与信息拆解</figcaption></figure><figure><img src="./assets/content-style-03.svg" alt="GEO 内容样例：豆包推荐场景内容封面" loading="lazy" /><figcaption><b>03</b> 场景化选题表达</figcaption></figure></div>
+          </aside>
+          </div>
+          <div class="case-row" data-category="service">
+          <article class="case-card" data-category="service" style="--card-accent: var(--cyan)">
+            <div><div class="case-meta"><span class="case-index">02</span> 企业内容代运营</div><h3>独立推进企业代运营项目</h3><p class="case-summary">从 brief 与传播目标出发，独立完成创作者筛选建联、稿件撰写、发布跟踪、数据回收和复盘。腕表品牌四期合作的218篇笔记均由我撰写，累计获得13,728次互动。</p></div>
+            <div class="service-process" aria-label="企业代运营执行流程"><span>01 · 拆解甲方 brief</span><span>02 · KOC 筛选与建联</span><span>03 · 稿件制作与发布</span><span>04 · 数据回收与复盘</span></div>
+            <small class="image-caption">四期项目脱敏结果摘要 · 74 / 46 / 63 / 35 篇</small>
+            <div class="case-result"><strong>218 篇</strong><span>四期笔记产出<br />13,728 次互动</span></div>
+            <details class="case-notes"><summary>内容策划与项目交付</summary><div class="case-notes-body"><p><b>策划与撰稿</b>独立拆解品牌需求，调研产品卖点与目标客群，将腕表知识、人物故事及选购对比转化为适合小红书传播的选题。四期218篇笔记均由我完成稿件撰写，并结合账号风格调整表达。</p><p><b>推进与发布</b>独立完成素人／KOC筛选建联、内容brief、稿件修改与发布排期，跟进创作者发布、核对链接并回收数据，统筹四期项目交付。</p><p><b>成果与复用</b>累计交付218篇笔记，获得13,728次互动。将选题规划、稿件制作、发布登记及复盘整理为标准化SOP，应用于腕表、家装和职业培训等不同业务的内容运营。</p></div></details>
+          </article>
+          <aside class="case-visual service-visual" aria-label="企业代运营代表性素人及KOC笔记">
+            <div class="visual-label">企业内容代运营 · 代表笔记</div>
+            <p class="service-proof-copy">产品故事与选购观点，用不同内容角度传达品牌价值。点击截图查看完整笔记。</p>
+            <div class="service-phase-gallery service-note-gallery"><figure><a href="https://xhslink.cn/o/5WAc0y7Yzo7" target="_blank" rel="noreferrer" aria-label="查看笔记：钻石是见面礼，机芯是告白书"><img src="./assets/service-koc-01.jpg" alt="小红书代表笔记《钻石是见面礼，机芯是告白书》高清截图" loading="lazy" /></a><figcaption>《钻石是见面礼，机芯是告白书》 ↗</figcaption></figure><figure><a href="https://xhslink.cn/o/1AJQTXmqL9d" target="_blank" rel="noreferrer" aria-label="查看笔记：玩表十年，谈谈对保值的看法"><img src="./assets/service-koc-02.jpg" alt="小红书代表笔记《玩表十年，谈谈对保值的看法》高清截图" loading="lazy" /></a><figcaption>《玩表十年，谈谈对保值的看法》 ↗</figcaption></figure></div>
+          </aside>
+          </div>
+          <div class="case-row" data-category="search">
+          <article class="case-card" data-category="search" style="--card-accent: var(--green)">
+            <div><div class="case-meta"><span class="case-index">03</span> 小红书点点 AI / GEO 优化</div><h3>10 个目标词全部进入点点 AI 回答</h3><p class="case-summary">从目标词规划、内容部署到多设备复测，形成可复用的收录优化与验证流程。</p></div>
+            <div class="geo-proof" aria-label="真实项目复测结果">
+              <div class="geo-proof-stats"><span class="geo-proof-kicker">点点 AI · 多设备实测</span><div><strong>10</strong><span>个目标词<br />全部进入AI回答</span></div><div><strong>10</strong><span>台设备<br />交叉验证</span></div><div><strong>100%</strong><span>目标词<br />上榜覆盖率</span></div></div>
+            </div>
+            <small class="image-caption">10个目标关键词 · 多设备复测留档 · <a href="https://hcndlqaz2xef.feishu.cn/base/X5kibxtuIaTEalsew4uch48qnPg?from=from_copylink" target="_blank" rel="noreferrer">查看上榜登记 ↗</a></small>
+            <div class="case-result"><strong>10 / 10</strong><span>目标关键词均有收录<br />其中 2 词达到 10 / 10 设备</span></div>
+            <div class="case-result"><strong>10 台</strong><span>设备交叉验证<br />逐词登记回答与引用来源</span></div>
+            <details class="case-notes"><summary>项目规划、执行与成果</summary><div class="case-notes-body"><p><b>目标与布局</b>负责公司小红书点点AI搜索优化项目，结合服务商选型需求确定10个目标关键词，按搜索意图分组，分析竞品推荐与引用笔记，制定内容布局和执行排期。</p><p><b>内容与验证</b>围绕品牌优势、真实案例及用户问题策划差异化内容，组织稿件制作与发布登记。逐词开展多设备复测，核对品牌推荐和引用来源，留存完整回答截图。</p><p><b>迭代与成果</b>根据每日测试结果调整薄弱词的选题角度与内容结构，发布后持续复测，推进关键词覆盖。2026.09.11—09.28完成本轮优化，10个目标词全部进入点点AI回答，其中2个词达到10台设备全部上榜。</p><p><b>方法沉淀</b>将选词、内容生产、发布登记、上榜验证及复盘整理为SOP，配套内容生成与登记指令、测试表和截图档案，用于后续项目执行。</p></div></details>
+          </article>
+          <aside class="case-visual search-visual" aria-label="点点 AI 上榜数据配图">
+            <div class="visual-label">小红书点点 AI · 多设备实测留档</div>
+            <a class="geo-evidence-image" href="https://hcndlqaz2xef.feishu.cn/base/X5kibxtuIaTEalsew4uch48qnPg?table=tblMeH5R4BmeoUVt&amp;view=vewCUecZ0g" target="_blank" rel="noreferrer" aria-label="打开真实的提示词收录状态登记表"><img src="./assets/geo-ranking-feishu.svg" alt="飞书提示词收录状态登记表截图，显示关键词、检验日期、设备收录个数及证据链接" loading="lazy" /></a>
+          </aside>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-section wrap" id="creator">
+        <div class="section-heading"><div><div class="section-kicker">个人创作账号</div><h2>我的<span>作品</span></h2></div></div>
+        <div class="social-grid">
+          <article class="social-card">
+            <div class="social-platform">抖音 · 个人绘画账号</div><h3>未济</h3><div class="social-handle">手绘创作 · 热点人物与故事表达 · 粉丝头像定制</div>
+            <div class="account-showcase"><div class="social-image-grid"><figure><a href="https://www.douyin.com/user/MS4wLjABAAAA1M1_pkEYsKEpMfAr6Z3ibbysePYXROWlN20IpAIV2Zo" target="_blank" rel="noreferrer" aria-label="打开未济抖音主页"><img class="social-image account-mobile-image" src="./assets/douyin-account-mobile.svg" alt="抖音账号手机主页高清截图，展示主页信息与代表作品" loading="lazy" /></a><figcaption>点击截图，打开抖音主页 ↗</figcaption></figure></div>
+              <div class="account-side"><div class="account-side-label">账号记录</div><div class="account-metrics"><div><strong>1,935</strong><span>粉丝</span></div><div><strong>1.2 万</strong><span>账号获赞</span></div><div><strong>62 万+</strong><span>代表视频播放</span></div></div><div class="account-side-label account-period-label">历史累计 · 公开作品</div><p class="account-period">截至 2026.10.03 · 56 篇公开作品</p><div class="account-metrics account-performance"><div><strong>1,524,108</strong><span>累计播放量</span></div><div><strong>4.42%</strong><span>平均封面点击率</span></div><div><strong>10.14 秒</strong><span>平均播放时长</span></div><div><strong>30.33%</strong><span>2秒跳出率</span></div><div><strong>50.83%</strong><span>5秒完播率</span></div></div><div class="account-side-label">代表作品</div><div class="social-links"><a class="social-link" href="https://www.douyin.com/video/7671533516735953762" target="_blank" rel="noreferrer">《晚安树哥》 ↗</a><a class="social-link" href="https://v.douyin.com/CBX5cLGXmQw/" target="_blank" rel="noreferrer">《范小勤又出大保底》 ↗</a><a class="social-link" href="https://v.douyin.com/EeqIUEa1saI/" target="_blank" rel="noreferrer">《晚安-游本昌》 ↗</a></div><a class="button" href="https://www.douyin.com/user/MS4wLjABAAAA1M1_pkEYsKEpMfAr6Z3ibbysePYXROWlN20IpAIV2Zo" target="_blank" rel="noreferrer">打开抖音主页 ↗</a></div>
+            </div>
+          </article>
+          <article class="social-card xhs">
+            <div class="social-platform" style="color: var(--pink)">小红书 · 个人绘画账号</div><h3>未济</h3><div class="social-handle">手绘创作 · 人物故事与情绪表达</div>
+            <div class="account-showcase"><div class="social-image-grid"><figure><a href="https://www.xiaohongshu.com/user/profile/666460df0000000003031688" target="_blank" rel="noreferrer" aria-label="打开未济小红书主页"><img class="social-image account-mobile-image" src="./assets/xhs-account-mobile.svg" alt="小红书个人账号手机主页高清截图，展示主页信息与置顶作品" loading="lazy" /></a><figcaption>点击截图，打开小红书主页 ↗</figcaption></figure></div>
+              <div class="account-side"><div class="account-side-label">账号记录</div><div class="account-metrics"><div><strong>405</strong><span>粉丝</span></div><div><strong>4,687</strong><span>获赞与收藏</span></div><div><strong>1,267</strong><span>置顶作品获赞</span></div></div><div class="account-side-label account-period-label">历史累计 · 公开作品</div><p class="account-period">截至 2026.10.03 · 48 篇公开作品</p><div class="account-metrics account-performance"><div><strong>60,551</strong><span>累计观看量</span></div><div><strong>7.69%</strong><span>平均封面点击率</span></div><div><strong>11.96 秒</strong><span>平均观看时长</span></div></div><div class="account-side-label">代表作品</div><div class="social-links"><a class="social-link" href="https://www.xiaohongshu.com/discovery/item/6ab60237000000001303c2ab?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABq18qXErULd-e8EH9YKW2dc0_sytKqEwSJ0R3sQT-wDk=&amp;xsec_source=pc_share" target="_blank" rel="noreferrer">《晚安-游本昌》 ↗</a><a class="social-link" href="https://www.xiaohongshu.com/discovery/item/6a76c3c30000000006007b76?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABZzarKwua16oFs8OKVh8l88oK9CZmqNSqtGl2AxdesnU=&amp;xsec_source=pc_share" target="_blank" rel="noreferrer">《晚安树哥》 ↗</a><a class="social-link" href="https://www.xiaohongshu.com/discovery/item/6abdf08a000000000a01db14?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABYskGTvJ_BKhmnJb6qv7BgX3EFn2Nt9VQKJ5-vpxMIEw=&amp;xsec_source=pc_share" target="_blank" rel="noreferrer">《范小勤又出大保底》 ↗</a></div><a class="button" href="https://www.xiaohongshu.com/user/profile/666460df0000000003031688" target="_blank" rel="noreferrer">打开小红书主页 ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="wrap about-grid">
+          <div><div class="section-kicker">关于我 · 简历</div><h2>内容运营<br />以结果复盘</h2><p class="about-lede">具备多平台内容运营、品牌种草交付和社群用户运营经验，能够独立完成需求调研、内容策划与制作、创作者协作和数据复盘。美术教学与个人手绘创作积累了审美和表达能力，社群运营让我更善于理解用户需求、维护关系，并将反馈转化为持续优化的行动。</p><a class="button resume-link" href="./assets/fangcheng-resume.pdf" target="_blank" rel="noreferrer">查看完整简历 PDF ↗</a><div class="skills"><span class="skill">小红书运营</span><span class="skill">点点 AI 搜索优化</span><span class="skill">企业获客</span><span class="skill">内容代运营</span><span class="skill">KOC 建联与管理</span><span class="skill">数据复盘</span><span class="skill">A/B 测试</span><span class="skill">AI 内容工作流</span><span class="skill">剪映</span><span class="skill">Photoshop</span></div></div>
+          <div class="timeline">
+            <div class="timeline-item"><div class="timeline-date">2025.12.15 — 至今</div><div><h3>库品（上海）网络科技有限公司 · 运营</h3><p>负责 GEO 业务获客运营、小红书点点 AI 搜索优化及多行业企业内容代运营。</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">2024.02 — 2025.11</div><div><h3>英语流利说 · 社群运营</h3><p>通过社群互动与1对1沟通识别用户学习动机和转化阻碍，迭代话术与促活策略；转化率从6%基线最高提升至8%，入职第二个月总业绩达到公司TOP3（据本人更新简历）。</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">2020.09 — 2023.12</div><div><h3>王参军美术教育 · 美术教师</h3><p>独立负责教学与80–100个家庭的长期关系维护，年均续费超过85%；将专业知识转成家长易理解的价值表达，积累需求洞察、服务沟通与图文审美能力。</p></div></div>
+            <div class="timeline-item"><div class="timeline-date">2016 — 2020</div><div><h3>马鞍山师范高等专科学校 · 美术教育</h3><p>大专，学习美术教育、心理学与教育学。</p></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="proof-band">
+        <div class="wrap">
+          <div class="section-kicker">我的工作方法</div>
+          <h2 class="proof-title">拿到结果，<span>留下方法。</span></h2>
+          <div class="proof-steps">
+            <div class="proof-step"><b>01</b><strong>理解需求</strong><small>通过沟通、用户反馈和资料调研，明确服务对象、实际问题与预期结果。</small></div>
+            <div class="proof-step"><b>02</b><strong>制定计划</strong><small>把目标拆成阶段重点与日常安排，确定优先级、所需资源和衡量进展的指标。</small></div>
+            <div class="proof-step"><b>03</b><strong>落实行动</strong><small>按计划推进内容、用户沟通和项目交付，做好协作、过程记录与质量检查。</small></div>
+            <div class="proof-step"><b>04</b><strong>跟踪调整</strong><small>持续观察数据和真实反馈，找到效果差异的原因，及时调整内容、话术或执行安排。</small></div>
+            <div class="proof-step"><b>05</b><strong>积累复用</strong><small>定期总结有效做法，把经验整理成模板与工作流程，借助AI工具提升效率，投入下一轮工作。</small></div>
+          </div>
+        </div>
+      </section>
+      <section class="contact-section wrap" id="contact">
+        <div class="section-kicker">联系我 · 求职与合作</div>
+        <div class="contact-panel">
+          <img class="contact-portrait" src="./assets/fangcheng-contact-portrait.svg" alt="方成证件照" loading="lazy" />
+          <div class="contact-main"><h2><span>方成</span></h2><p>我能把用户需求转化为可执行的方案，兼顾内容创作、用户沟通与协作交付。无论是账号日常运营、品牌传播、社群服务还是项目推进，都能独立开展工作，并根据反馈持续优化。期待加入重视执行与成长的团队，欢迎联系我。</p><div class="contact-methods"><a href="mailto:1416384177@qq.com"><small>邮箱</small><strong>1416384177@qq.com ↗</strong></a><a href="tel:17338739941"><small>电话</small><strong>173 3873 9941 ↗</strong></a><div><small>微信</small><strong>DWF1290</strong></div></div></div>
+          <div class="contact-qr"><img src="./assets/wechat-qr.svg" alt="方成个人微信二维码，可使用微信扫码添加" loading="lazy" /><span>微信扫一扫 · 添加联系</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer wrap">
+      <div class="footer-bottom"><span>方成 · GEO 获客运营作品集</span><span>资料核对于 2026.10.03 · 各项数据以对应说明为准 · 企业客户案例已匿名处理</span></div>
+    </footer>
+  </body>
+</html>
