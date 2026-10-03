@@ -36,15 +36,9 @@ const caseCards = document.querySelectorAll('.case-row[data-category]');
 
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    const category = button.dataset.filter;
-    filterButtons.forEach((item) => {
-      const active = item === button;
-      item.classList.toggle('is-active', active);
-      item.setAttribute('aria-pressed', String(active));
-    });
-    caseCards.forEach((card) => {
-      card.hidden = category !== 'all' && card.dataset.category !== category;
-    });
+    const target = Array.from(caseCards).find((card) => card.dataset.category === button.dataset.filter);
+    if (!target) return;
+    target.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
   });
 });
 
