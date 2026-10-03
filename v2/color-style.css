@@ -152,3 +152,20 @@ body { background: #09090b; }
 .button:hover, .social-link:hover, .evidence-links a:hover, .filter-button:hover { border-color:#7492fe; box-shadow:0 5px 20px rgba(31,120,255,.14); }
 .contact-methods a:hover { color:#345bc7; border-color:#7492fe; }
 :focus-visible { outline-color:#7492fe !important; }
+
+/* Requested evidence text and top-left illumination on the three project cards. */
+.result-snapshot { --green:#1f78ff; --pink:#1f78ff; --cyan:#1f78ff; }
+.result-intro h2 span, .result-snapshot .section-kicker,
+.result-item strong, .result-item:nth-child(2) strong, .result-item:nth-child(3) strong { color:#1f78ff; }
+.case-card[data-category="lead"], .case-card[data-category="service"], .case-card[data-category="search"] {
+  background:radial-gradient(ellipse at 0% 0%,rgba(116,119,191,.24),transparent 62%),linear-gradient(135deg,#17172e 0%,#0b0c20 65%,#090b1b 100%);
+  border-color:#35364f;
+}
+/* Independent rotate property preserves existing reveal/lift transforms. */
+.gentle-tilt {
+  rotate:1 0 0 0deg;
+  transition:rotate .4s cubic-bezier(.22,.61,.36,1),transform .4s cubic-bezier(.22,.61,.36,1),border-color .4s,box-shadow .4s;
+}
+.gentle-tilt.is-tilting { rotate:var(--tilt-axis,1 0 0) var(--tilt-angle,0deg); }
+.js-ready .gentle-tilt.reveal.is-visible { transition:rotate .4s cubic-bezier(.22,.61,.36,1),transform .4s cubic-bezier(.22,.61,.36,1),opacity .65s,border-color .4s,box-shadow .4s; }
+@media (prefers-reduced-motion:reduce), (hover:none) { .gentle-tilt, .gentle-tilt.is-tilting { rotate:none; } }

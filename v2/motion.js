@@ -56,6 +56,42 @@ if ('IntersectionObserver' in window) {
 }
 
 
+// Small pointer-led 3D sway, disabled for touch and reduced-motion users.
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+const tiltTargets = document.querySelectorAll('.case-card, .social-image-grid a, .lead-proof a, .geo-evidence-image, .service-phase-gallery a, .contact-methods a, .button, .social-link, .filter-button');
+tiltTargets.forEach((element) => {
+  element.classList.add('gentle-tilt');
+  let frame = 0;
+  let latestPoint;
+  const resetTilt = () => {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    element.classList.remove('is-tilting');
+    element.style.removeProperty('--tilt-axis');
+    element.style.removeProperty('--tilt-angle');
+  };
+  element.addEventListener('pointermove', (event) => {
+    if (reducedMotion.matches || !finePointer.matches || document.body.classList.contains('local-editing')) return;
+    latestPoint = { x: event.clientX, y: event.clientY };
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      const bounds = element.getBoundingClientRect();
+      const x = Math.max(-1, Math.min(1, (latestPoint.x - bounds.left) / bounds.width * 2 - 1));
+      const y = Math.max(-1, Math.min(1, (latestPoint.y - bounds.top) / bounds.height * 2 - 1));
+      const limit = element.matches('.case-card') ? 1.8 : 2.5;
+      const angle = Math.hypot(x, y) * limit;
+      element.style.setProperty('--tilt-axis', `${-y || .0001} ${x} 0`);
+      element.style.setProperty('--tilt-angle', `${angle.toFixed(3)}deg`);
+      element.classList.add('is-tilting');
+    });
+  });
+  element.addEventListener('pointerleave', resetTilt);
+  element.addEventListener('pointercancel', resetTilt);
+  reducedMotion.addEventListener('change', resetTilt);
+  finePointer.addEventListener('change', resetTilt);
+});
+
 // Highlight the project currently passing through the reading area.
 // This is independent of the click-to-filter selection above.
 const projectSection = document.querySelector('#work');
