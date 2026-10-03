@@ -175,3 +175,6 @@ body { background: #09090b; }
 .account-performance strong { font-size:clamp(19px,1.65vw,25px); white-space:nowrap; }
 #creator .account-performance .metric-unavailable { color:#697187; font-size:13px; font-weight:500; letter-spacing:0; }
 .account-performance span { max-width:76px; }
+.account-performance { min-height:282px; align-content:start; }
+.account-performance strong { font-size:clamp(17px,1.5vw,23px); }
+@media (max-width:650px) { .account-performance { min-height:0; } }
