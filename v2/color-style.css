@@ -169,3 +169,9 @@ body { background: #09090b; }
 .gentle-tilt.is-tilting { rotate:var(--tilt-axis,1 0 0) var(--tilt-angle,0deg); }
 .js-ready .gentle-tilt.reveal.is-visible { transition:rotate .4s cubic-bezier(.22,.61,.36,1),transform .4s cubic-bezier(.22,.61,.36,1),opacity .65s,border-color .4s,box-shadow .4s; }
 @media (prefers-reduced-motion:reduce), (hover:none) { .gentle-tilt, .gentle-tilt.is-tilting { rotate:none; } }
+.account-period-label { margin-top:8px; }
+.account-period { margin:-7px 0 0; color:#50576d; font-size:10px; line-height:1.5; }
+.account-performance div { min-height:50px; }
+.account-performance strong { font-size:clamp(19px,1.65vw,25px); white-space:nowrap; }
+#creator .account-performance .metric-unavailable { color:#697187; font-size:13px; font-weight:500; letter-spacing:0; }
+.account-performance span { max-width:76px; }
