@@ -2,7 +2,7 @@
   // The editor is deliberately available only in the local file preview.
   if (window.location.protocol !== 'file:') return;
 
-  const storageKey = 'fangcheng-portfolio-v3-content-20261004-r4';
+  const storageKey = 'fangcheng-portfolio-v3-content-20261004-r5';
   const selectors = [
     '.brand-name', '.nav a', '.eyebrow', '.hero-title-first', '.hero-title-second', '.hero-name', '.hero-copy', '.hero-note',
     '.hero-actions .button', '.hero-video-label', '.hero-bottom span', '.ticker-track span',
