@@ -194,6 +194,11 @@ body { background: #09090b; }
 .case-visual .service-note-gallery figcaption { margin:0; padding:12px 10px; line-height:1.55; color:#143034; }
 .resume-link { margin-top:18px; }
 
+/* Keep the requested GEO disclosure directly below the retained evidence caption. */
+.case-card[data-category="search"] { justify-content:flex-start; }
+.case-card[data-category="search"] .case-notes { margin-top:14px; }
+#creator .creator-strategy-copy { max-width:560px; color:#50576d; line-height:1.8; }
+
 /* Keep the enterprise outcome and disclosure directly below its workflow. */
 .case-card[data-category="service"] { justify-content:flex-start; }
 .case-card[data-category="service"] .case-result { margin-top:21px; }
